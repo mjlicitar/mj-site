@@ -10,6 +10,7 @@
         .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
         .glass-nav { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); }
         .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
+        .text-glow { text-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
     </style>
 </head>
 <body class="bg-white text-slate-800 font-sans leading-normal text-sm">
@@ -18,8 +19,8 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-12 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-black text-xl italic text-white shadow-lg">M&J</div>
-                <div class="flex flex-col text-white">
-                    <span class="text-lg font-bold tracking-tighter uppercase leading-none font-black italic">Comércio <span class="text-blue-500">&</span> Serviços</span>
+                <div class="flex flex-col">
+                    <span class="text-lg font-bold tracking-tighter uppercase leading-none text-white font-mono">Comércio <span class="text-blue-500">&</span> Serviços</span>
                     <span class="text-[9px] text-slate-400 tracking-[0.3em] uppercase font-bold mt-1">Excelência desde 2020</span>
                 </div>
             </div>
@@ -31,56 +32,3 @@
             </div>
         </div>
     </nav>
-
-    <header class="relative hero-gradient py-32 md:py-56 px-6 overflow-hidden border-b-8 border-blue-600 text-center">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')] bg-cover bg-center"></div>
-        <div class="container mx-auto relative z-10 text-center">
-            <h1 class="text-5xl md:text-8xl font-black text-white mb-8 uppercase italic tracking-tighter leading-[0.85]">
-                Inteligência e <br><span class="text-blue-500 font-extrabold italic font-black">Estratégia Nacional</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-14 leading-relaxed italic font-light">
-                M&J COMÉRCIO E SERVIÇOS LTDA: Soluções críticas em TI, Internet Satelital e Assessoria Técnica para instituições de elite.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-8">
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-14 py-6 rounded-2xl font-black hover:bg-blue-700 transition shadow-2xl uppercase tracking-[0.2em] text-xs italic">Fale Conosco</a>
-                <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-14 py-6 rounded-2xl font-black hover:bg-white hover:text-slate-900 transition uppercase tracking-[0.2em] text-xs italic">E-mail Corporativo</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="sobre" class="py-32 bg-white">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-24 items-center">
-            <div>
-                <h2 class="text-5xl font-black text-slate-900 uppercase italic mb-10 border-l-[12px] border-blue-600 pl-8 tracking-tighter leading-none">Nossa História</h2>
-                <div class="space-y-6 text-lg text-slate-600 leading-relaxed italic font-medium text-justify">
-                    <p>Atuando desde 2020, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> consolidou-se como um braço estratégico para operações de alta complexidade em Belém/PA.</p>
-                    <p>Sediada na <strong>Av. Senador Lemos, 791, Umarizal</strong>, entregamos gestão técnica superior sob a liderança do CEO Angelo Souto, focando na integridade e agilidade em licitações nacionais.</p>
-                </div>
-                <div class="mt-12 bg-slate-50 p-8 rounded-[2rem] border border-slate-100 italic">
-                    <h4 class="font-black text-blue-600 uppercase text-xs mb-4 tracking-widest font-bold">Dados Institucionais</h4>
-                    <p class="font-bold">CNPJ: 39.469.099/0001-00</p>
-                    <p>Sede: Av. Senador Lemos, 791, Umarizal, Belém-PA</p>
-                    <p>CEP: 66.050-000</p>
-                </div>
-            </div>
-            <div class="bg-slate-900 p-12 rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden group">
-                <h3 class="text-3xl font-black mb-6 uppercase italic text-blue-500 tracking-tighter">Missão & Visão</h3>
-                <p class="text-slate-400 italic text-lg leading-relaxed mb-6 font-medium">Garantir conectividade resiliente e inteligência tecnológica em qualquer cenário operacional, assegurando que missões críticas sejam executadas com precisão absoluta.</p>
-                <p class="text-white italic text-xl font-medium leading-relaxed font-bold italic">"Tornar-se a maior empresa de licitações do Brasil, dominando o fornecimento em diversas áreas governamentais e privadas."</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="solucoes" class="py-32 bg-slate-50 border-y border-slate-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-center text-5xl font-black text-slate-900 uppercase italic mb-24 tracking-tighter font-black italic">Nossos Serviços</h2>
-            <div class="grid md:grid-cols-3 gap-12 text-center md:text-left">
-                <div class="bg-white p-14 rounded-[4rem] card-hover border border-slate-200 transition-all duration-500">
-                    <i class="fas fa-satellite text-4xl text-blue-600 mb-10"></i>
-                    <h4 class="text-2xl font-black mb-6 uppercase italic font-bold">TI & Satélite</h4>
-                    <p class="text-slate-500 italic mb-4 font-medium italic">Internet Starlink em áreas remotas, gestão de servidores e infraestrutura completa de TI para órgãos governamentais.</p>
-                </div>
-                <div class="bg-white p-14 rounded-[4rem] card-hover border border-slate-200 transition-all duration-500">
-                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-10"></i>
-                    <h4 class="text-2xl font-black mb-6 uppercase italic font-bold">Rastreamento</h4>
-                    <p class="text-slate-
