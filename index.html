@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .section-dark { background-color: #0f172a; }
     </style>
 </head>
 <body class="bg-white text-slate-800 font-sans leading-normal">
@@ -24,7 +23,7 @@
                 <a href="#missao" class="hover:text-blue-400 transition">Missão & Visão</a>
                 <a href="#solucoes" class="hover:text-blue-400 transition">Nossos Serviços</a>
                 <a href="#clientes" class="hover:text-blue-400 transition">Portfólio</a>
-                <a href="#assessoria" class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg">Assessoria</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg uppercase font-bold tracking-widest">Fale Conosco</a>
             </div>
         </div>
     </nav>
@@ -39,5 +38,76 @@
                 Desde 2020 entregando soluções críticas em TI, Conectividade Satelital e Assessoria Técnica.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-12 py-5 rounded-xl font-bold hover:bg-blue-700 transition shadow-2xl uppercase tracking-widest text-sm">Falar com o CEO</a>
-                <a href="https://www.instagram.com/mj_licitacores" target="_blank" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-xl font-bold hover:bg-white hover:text-slate-900
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-12 py-5 rounded-xl font-bold hover:bg-blue-700 transition shadow-2xl uppercase tracking-widest text-sm italic">Fale Conosco</a>
+                <a href="https://www.instagram.com/mj_licitacores" target="_blank" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-xl font-bold hover:bg-white hover:text-slate-900 transition uppercase tracking-widest text-sm italic">@mj_licitacores</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre" class="py-24 bg-white border-b border-slate-100">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-4xl font-black text-slate-900 uppercase italic mb-8 border-l-8 border-blue-600 pl-6">Sobre Nós</h2>
+                <p class="text-lg text-slate-600 leading-relaxed mb-6 italic">
+                    A M&J Comércio e Serviços LTDA iniciou sua trajetória em 2020 com o compromisso de preencher lacunas tecnológicas e de manutenção em contratos governamentais.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Sediada em Belém/PA, a empresa nasceu para oferecer uma gestão técnica superior em serviços de TI e Internet Satelital. Hoje, somos referência em agilidade e conformidade para órgãos civis e militares.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-slate-50 p-10 rounded-3xl text-center shadow-sm">
+                    <span class="block text-4xl font-black text-blue-600 mb-2 font-mono">2020</span>
+                    <span class="text-xs uppercase font-bold text-slate-400">Atuação desde</span>
+                </div>
+                <div class="bg-slate-900 p-10 rounded-3xl text-center shadow-xl">
+                    <span class="block text-4xl font-black text-white mb-2 italic">Brasil</span>
+                    <span class="text-xs uppercase font-bold text-blue-500">Atuação Nacional</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="missao" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-100">
+                    <i class="fas fa-rocket text-4xl text-blue-600 mb-6"></i>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic tracking-tighter">Missão</h3>
+                    <p class="text-slate-600 leading-relaxed italic">Garantir a infraestrutura necessária para operações críticas através de soluções tecnológicas de vanguarda e atendimento de excelência.</p>
+                </div>
+                <div class="bg-slate-900 p-12 rounded-[3rem] shadow-2xl text-white">
+                    <i class="fas fa-eye text-4xl text-blue-500 mb-6"></i>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic tracking-tighter text-blue-500">Visão</h3>
+                    <p class="text-slate-400 leading-relaxed italic">Tornar-se a maior empresa de licitações do Brasil, dominando o fornecimento de serviços especializados com contratos em diversas áreas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-4xl font-black text-slate-900 uppercase italic mb-20 tracking-tighter underline decoration-blue-600 decoration-8 underline-offset-8">Nossos Serviços</h2>
+            <div class="grid md:grid-cols-3 gap-10 text-sm">
+                <div class="group bg-white p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <i class="fas fa-satellite text-4xl text-blue-600 mb-6 group-hover:scale-110 transition"></i>
+                    <h4 class="text-xl font-bold mb-4 uppercase italic">TI & Satélite</h4>
+                    <p class="text-slate-500 italic">Internet Starlink em áreas remotas e gestão completa de infraestrutura crítica de TI.</p>
+                </div>
+                <div class="group bg-white p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <i class="fas fa-truck-monster text-4xl text-blue-600 mb-6 group-hover:scale-110 transition"></i>
+                    <h4 class="text-xl font-bold mb-4 uppercase italic">Rastreamento</h4>
+                    <p class="text-slate-500 italic">Monitoramento e telemetria avançada de frotas institucionais em tempo real.</p>
+                </div>
+                <div class="group bg-white p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <i class="fas fa-gavel text-4xl text-blue-600 mb-6 group-hover:scale-110 transition"></i>
+                    <h4 class="text-xl font-bold mb-4 uppercase italic text-blue-600">Assessoria</h4>
+                    <p class="text-slate-500 italic">Consultoria estratégica para empresas que desejam vencer em grandes processos licitatórios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clientes" class="py-20 bg-slate-900 text-white overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text
