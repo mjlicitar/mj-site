@@ -7,77 +7,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .hero-gradient { background: linear-gradient(135deg, #020617 0%, #0f172a 100%); }
-        .glass-nav { background: rgba(2, 6, 23, 0.98); backdrop-filter: blur(12px); }
-        .portfolio-card { background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; transition: 0.4s; }
-        .portfolio-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
+        :root { --brand-blue: #2563eb; --deep-navy: #020617; }
+        body { background-color: white; color: #1e293b; font-family: 'Inter', sans-serif; }
+        .hero-section { background-color: var(--deep-navy); background-image: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent); }
+        .glass-nav { background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(10px); }
+        .portfolio-card:hover { transform: translateY(-5px); border-color: var(--brand-blue); transition: all 0.3s ease; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+<body>
 
     <nav class="glass-nav p-5 sticky top-0 z-50 border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-10 bg-blue-600 rounded flex items-center justify-center font-black text-xl italic text-white shadow-lg">M&J</div>
-                <span class="text-xl font-black tracking-tighter uppercase italic">M&J <span class="text-blue-500">COMÉRCIO</span></span>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-10 bg-blue-600 rounded flex items-center justify-center font-black text-xl italic text-white">M&J</div>
+                <span class="text-xl font-black tracking-tighter uppercase italic text-white">M&J <span class="text-blue-500">COMÉRCIO</span></span>
             </div>
-            <div class="hidden lg:flex items-center space-x-8 font-bold text-[10px] uppercase tracking-widest">
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[10px] uppercase tracking-widest text-slate-300">
                 <a href="#sobre" class="hover:text-blue-500 transition">A Empresa</a>
-                <a href="#solucoes" class="hover:text-blue-400 transition">Serviços</a>
-                <a href="#portfolio" class="hover:text-blue-400 transition">Portfólio</a>
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition shadow-xl text-white">Assessoria VIP</a>
+                <a href="#solucoes" class="hover:text-blue-500 transition">Serviços</a>
+                <a href="#portfolio" class="hover:text-blue-500 transition">Portfólio</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition text-white">Assessoria VIP</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative hero-gradient py-32 md:py-48 px-6 text-center border-b-8 border-blue-600">
+    <header class="hero-section py-40 md:py-60 px-6 text-center border-b-8 border-blue-600">
         <div class="container mx-auto relative z-10">
-            <h1 class="text-5xl md:text-8xl font-black mb-6 uppercase italic tracking-tighter leading-none">
-                Estratégia <br><span class="text-blue-600">Nacional</span>
+            <h1 class="text-6xl md:text-9xl font-black text-white mb-8 uppercase italic tracking-tighter leading-none">
+                ESTRATÉGIA <br><span class="text-blue-600">NACIONAL</span>
             </h1>
-            <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-12 italic">M&J COMÉRCIO E SERVIÇOS LTDA: Infraestrutura de TI e Inteligência em Licitações desde 2020.</p>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto mb-16 italic font-light">
+                M&J COMÉRCIO E SERVIÇOS LTDA: Soluções Críticas de Tecnologia e Inteligência em Licitações desde 2020.
+            </p>
             <div class="flex flex-wrap justify-center gap-6">
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-blue-700 transition shadow-2xl">Falar com Especialista</a>
-                <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/5 border border-white/20 px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-white hover:text-slate-900 transition">E-mail Corporativo</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="sobre" class="py-24 bg-white text-slate-900">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-5xl font-black uppercase italic mb-8 border-l-8 border-blue-600 pl-6 tracking-tighter">Sobre a M&J</h2>
-                <div class="space-y-6 text-lg italic leading-relaxed">
-                    <p>Fundada em 2020 por <strong>Angelo Souto</strong>, a M&J consolidou-se em Belém/PA como um braço estratégico para operações de alta complexidade.</p>
-                    <p>Sediada na <strong>Av. Senador Lemos, 791, Umarizal</strong>, unimos expertise técnica com agilidade administrativa para atender o rigor do mercado público.</p>
-                </div>
-                <div class="mt-10 p-6 bg-slate-50 rounded-2xl border border-slate-200">
-                    <p class="font-black text-xs uppercase tracking-widest text-blue-600 mb-2">Dados Oficiais</p>
-                    <p class="font-bold">CNPJ: 39.469.099/0001-00</p>
-                    <p class="text-sm">Belém - Pará | CEP: 66.050-000</p>
-                </div>
-            </div>
-            <div class="bg-slate-900 p-10 rounded-[3rem] text-white shadow-2xl">
-                <h3 class="text-2xl font-black mb-6 text-blue-500 uppercase italic">Visão Nacional</h3>
-                <p class="text-xl font-light italic leading-relaxed mb-6">"Tornar-se a maior referência em licitações do Brasil, dominando o fornecimento tecnológico governamental."</p>
-                <div class="w-16 h-1 bg-blue-600"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="solucoes" class="py-24 bg-slate-50 text-slate-900 border-y border-slate-200">
-        <div class="container mx-auto px-6">
-            <h2 class="text-center text-4xl font-black uppercase italic mb-16 tracking-tighter">Nossas Soluções</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-200 transition hover:border-blue-500">
-                    <i class="fas fa-satellite text-3xl text-blue-600 mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase italic">TI & Satélite</h4>
-                    <p class="text-slate-500 italic">Conectividade Starlink e gestão de infraestrutura crítica para áreas remotas.</p>
-                </div>
-                <div class="bg-white p-10 rounded-[3rem] shadow-sm border border-slate-200 transition hover:border-blue-500">
-                    <i class="fas fa-truck-monster text-3xl text-blue-600 mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase italic">Rastreamento</h4>
-                    <p class="text-slate-500 italic">Telemetria avançada e monitoramento de ativos críticos em tempo real.</p>
-                </div>
-                <div class="bg-slate-900 p-10 rounded-[3rem] shadow-2xl text-white">
-                    <i class="fas fa-gavel text-3xl text
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-16 py-6 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-blue-700 shadow-2xl transition-all">Falar com Especialista</a>
+                <a href="mailto:comercial@mjlicitar.com.br" class="bg-transparent border border-white/20 text
