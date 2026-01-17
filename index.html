@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Tecnologia & Conectividade Crítica</title>
+    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Tecnologia & Satélite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -12,16 +12,15 @@
         .hero-title { line-height: 0.9; letter-spacing: -0.04em; font-style: italic; font-weight: 900; }
         .glass-nav { background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); }
         .section-white { background-color: white; color: #0f172a; }
-        .card-hover:hover { transform: translateY(-8px); border-color: var(--brand-blue); transition: all 0.3s ease; }
-
-        /* NOVA CLASSE PARA A IMAGEM DE SATÉLITE */
+        
+        /* NOVA ESTÉTICA DE IMPACTO COM IMAGEM DE SATÉLITE */
         .hero-bg {
             position: relative;
-            background-image: linear-gradient(rgba(3, 7, 18, 0.7), rgba(3, 7, 18, 0.9)), 
+            background-image: linear-gradient(rgba(3, 7, 18, 0.6), rgba(3, 7, 18, 0.9)), 
                               url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito parallax suave */
+            background-attachment: fixed; /* Efeito Parallax */
         }
     </style>
 </head>
@@ -30,107 +29,90 @@
     <nav class="glass-nav p-4 sticky top-0 z-50 border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-8 bg-blue-600 rounded flex items-center justify-center font-black text-lg italic text-white shadow-lg text-white">M&J</div>
-                <span class="text-lg font-black tracking-tighter uppercase italic text-white">M&J <span class="text-blue-500 font-black">COMÉRCIO</span></span>
+                <div class="w-10 h-8 bg-blue-600 rounded flex items-center justify-center font-black text-lg italic text-white shadow-lg">M&J</div>
+                <span class="text-lg font-black tracking-tighter uppercase italic text-white">M&J <span class="text-blue-500">COMÉRCIO</span></span>
             </div>
             <div class="hidden lg:flex items-center space-x-6 font-black text-[9px] uppercase tracking-[0.2em] text-slate-400">
                 <a href="#sobre" class="hover:text-blue-500 transition">A Empresa</a>
                 <a href="#solucoes" class="hover:text-blue-500 transition">Serviços</a>
-                <a href="#portfolio" class="hover:text-blue-500 transition">Portfólio</a>
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full text-white shadow-lg hover:bg-blue-700 transition">ASSESSORIA VIP</a>
+                <a href="#portal" class="hover:text-blue-400 transition text-blue-500 underline underline-offset-8">Acesso Restrito</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full text-white shadow-lg">ASSESSORIA VIP</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg py-32 md:py-56 px-6 text-center overflow-hidden border-b border-blue-900/30">
+    <header class="hero-bg py-32 md:py-56 px-6 text-center border-b border-blue-900/30">
         <div class="container mx-auto relative z-10">
             <div class="inline-block px-4 py-1 mb-6 border border-blue-500/30 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-black uppercase tracking-[0.3em]">
-                Alta Performance Governamental
+                Alta Performance Governamental desde 2020
             </div>
             <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8 drop-shadow-2xl">
                 INTELIGÊNCIA <br><span class="text-blue-600">TECNOLÓGICA</span>
             </h1>
             <p class="text-base md:text-xl text-slate-300 max-w-3xl mx-auto mb-12 italic font-light drop-shadow">
-                M&J COMÉRCIO E SERVIÇOS LTDA: Infraestrutura de TI de Alta Performance e Conectividade Satelital para Missões Críticas.
+                M&J COMÉRCIO E SERVIÇOS LTDA: Infraestrutura de TI e Conectividade Satelital para Missões Críticas.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-12 py-5 rounded-xl font-black uppercase tracking-widest text-[10px] italic hover:bg-blue-700 transition-all shadow-xl">FALAR COM ESPECIALISTA</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-12 py-5 rounded-xl font-black uppercase tracking-widest text-[10px] italic hover:bg-blue-700 shadow-xl transition-all">FALAR COM ESPECIALISTA</a>
                 <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/5 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-xl font-black uppercase tracking-widest text-[10px] italic hover:bg-white hover:text-slate-950 transition-all">E-MAIL CORPORATIVO</a>
             </div>
         </div>
     </header>
 
-    <section id="sobre" class="section-white py-24">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-black uppercase italic mb-8 border-l-[10px] border-blue-600 pl-6 tracking-tighter text-slate-900">A Empresa</h2>
-                <div class="space-y-6 text-base italic leading-relaxed text-slate-600 font-medium text-justify">
-                    <p>Com sede em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 entregando soluções de ponta em tecnologia e conectividade sob a gestão do CEO <strong>Angelo Souto</strong>.</p>
-                    <p>Somos especialistas em implementar redes resilientes e suporte técnico de alto nível para instituições de rigor máximo, como a PRF e o CIGS.</p>
-                </div>
+    <section id="portal" class="py-20 bg-slate-900 border-y border-slate-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 text-center md:text-left">
+            <div class="bg-slate-800/50 p-10 rounded-[2.5rem] border border-slate-700 italic uppercase font-black">
+                <h4 class="text-blue-500 text-[10px] mb-4 border-b-2 border-blue-600 pb-2 inline-block">Área Administrativa</h4>
+                <h3 class="text-2xl mb-6">Acesso Restrito</h3>
+                <a href="https://ebmail.eb.mil.br/" target="_blank" class="flex items-center justify-between bg-blue-600/10 border border-blue-600/30 p-4 rounded-xl hover:bg-blue-600 transition group">
+                    <span class="text-[10px]">Webmail Corporativo (EBmail)</span>
+                    <i class="fas fa-envelope text-blue-500 group-hover:text-white transition"></i>
+                </a>
             </div>
-            <div class="bg-slate-900 p-10 rounded-[3rem] text-white shadow-xl">
-                <h3 class="text-2xl font-black mb-4 text-blue-500 uppercase italic">Nossa Missão</h3>
-                <p class="text-lg font-light italic leading-relaxed">"Prover conectividade resiliente e inteligência tecnológica, garantindo que infraestruturas fundamentais operem com precisão absoluta em qualquer cenário."</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="solucoes" class="py-24 bg-slate-950">
-        <div class="container mx-auto px-6">
-            <h2 class="text-center text-3xl font-black uppercase italic mb-16 tracking-tighter text-white">Nossas Soluções</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left font-black uppercase italic text-white">
-                <div class="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-800 card-hover">
-                    <i class="fas fa-satellite text-3xl text-blue-600 mb-6"></i>
-                    <h4 class="text-xl font-black mb-4">TI & Satélite</h4>
-                    <p class="text-slate-400 text-xs italic font-medium normal-case mb-6">Conectividade Starlink para áreas remotas e gestão de redes críticas.</p>
-                    <a href="https://wa.me/5591992203081" target="_blank" class="text-blue-600 text-[9px] tracking-widest uppercase font-black">SAIBA MAIS <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-800 card-hover">
-                    <i class="fas fa-server text-3xl text-blue-600 mb-6"></i>
-                    <h4 class="text-xl font-black mb-4">Gestão de Dados</h4>
-                    <p class="text-slate-400 text-xs italic font-medium normal-case mb-6">Suporte técnico especializado em infraestrutura de servidores e bancos de dados SQL.</p>
-                    <a href="https://wa.me/5591992203081" target="_blank" class="text-blue-600 text-[9px] tracking-widest uppercase font-black">SAIBA MAIS <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                <div class="bg-blue-600 p-10 rounded-[2.5rem] shadow-xl text-white">
-                    <i class="fas fa-gavel text-3xl text-white mb-6"></i>
-                    <h4 class="text-xl font-black mb-4">Assessoria</h4>
-                    <p class="text-blue-100 text-xs italic font-medium normal-case mb-6">Consultoria estratégica para empresas vencerem licitações de base tecnológica.</p>
-                    <a href="https://wa.me/5591992203081" target="_blank" class="bg-slate-900 text-white px-6 py-2 rounded-full text-[9px] tracking-widest inline-block text-white font-black">CONTATO VIP</a>
+            <div class="bg-slate-800/50 p-10 rounded-[2.5rem] border border-slate-700 italic uppercase font-black">
+                <h4 class="text-green-500 text-[10px] mb-4 border-b-2 border-green-600 pb-2 inline-block">Portal do Usuário</h4>
+                <h3 class="text-2xl mb-6">Portal do Cliente</h3>
+                <div class="space-y-4 text-[10px]">
+                    <a href="https://www.findmespot.com/login" target="_blank" class="flex items-center justify-between bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-white hover:text-slate-950 transition">
+                        <span>Monitoramento FindMeSPOT</span> <i class="fas fa-map-marker-alt text-blue-500"></i>
+                    </a>
+                    <a href="https://www.starlink.com/account/login" target="_blank" class="flex items-center justify-between bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-white hover:text-slate-950 transition">
+                        <span>Painel Conta Starlink</span> <i class="fas fa-satellite text-blue-500"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-6 border-t border-slate-900 bg-black text-white italic">
+    <footer class="py-20 px-6 bg-black text-white italic uppercase font-black border-t border-slate-900">
         <div class="container mx-auto grid md:grid-cols-3 gap-12 border-b border-slate-800 pb-16">
             <div>
-                <h3 class="text-2xl font-black mb-6 italic text-blue-600 tracking-tighter italic">M&J <span class="text-white">COMÉRCIO</span></h3>
-                <p class="text-slate-500 text-[10px] mb-4 tracking-[0.3em] font-black uppercase text-white">CNPJ: 39.469.099/0001-00</p>
-                <p class="text-slate-400 text-xs tracking-widest leading-relaxed text-justify">Inovação tecnológica e conectividade estratégica em missões críticas desde 2020.</p>
+                <h3 class="text-2xl mb-6 text-blue-600 tracking-tighter italic">M&J <span class="text-white">COMÉRCIO</span></h3>
+                <p class="text-slate-500 text-[10px] mb-4 tracking-[0.3em]">CNPJ: 39.469.099/0001-00</p>
+                <p class="text-slate-400 text-xs tracking-widest normal-case font-medium italic leading-relaxed">Referência em Belém/PA: Inovação e conectividade estratégica para Órgãos de Elite.</p>
             </div>
             <div>
-                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 font-black uppercase">Canais Oficiais</h4>
-                <div class="space-y-4 text-xs tracking-widest font-black uppercase">
-                    <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-blue-600"></i> (91) 99220-3081</p>
-                    <p class="flex items-center gap-4"><i class="fas fa-envelope text-blue-600"></i> comercial@mjlicitar.com.br</p>
-                    <p class="flex items-center gap-4"><i class="fab fa-instagram text-blue-600"></i> @mj_licitacores</p>
+                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 italic">Canais Oficiais</h4>
+                <div class="space-y-4 text-xs tracking-widest normal-case">
+                    <p><i class="fas fa-phone-alt text-blue-600 mr-2"></i> (91) 99220-3081</p>
+                    <p><i class="fas fa-envelope text-blue-600 mr-2"></i> comercial@mjlicitar.com.br</p>
+                    <p><i class="fab fa-instagram text-blue-600 mr-2"></i> @mj_licitacores</p>
                 </div>
             </div>
             <div>
-                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 font-black uppercase">Sede Estratégica</h4>
-                <p class="text-slate-200 text-xs mb-2 font-black uppercase italic">Av. Senador Lemos, 791 - Umarizal</p>
+                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 italic">Sede Estratégica</h4>
+                <p class="text-slate-200 text-xs mb-2">Av. Senador Lemos, 791 - Umarizal</p>
                 <p class="text-slate-500 font-mono tracking-widest text-blue-500 text-[10px]">CEP: 66.050-000 | Belém-PA</p>
-                <p class="mt-10 text-slate-400 border-t border-slate-900 pt-6 tracking-[0.2em] font-black uppercase text-[10px]">Angelo Souto - CEO</p>
+                <p class="mt-10 text-slate-400 border-t border-slate-900 pt-6 tracking-[0.2em] text-[10px]">Angelo Souto - CEO</p>
             </div>
         </div>
-        <div class="container mx-auto pt-10 text-center text-slate-800 text-[8px] font-black tracking-[0.6em] uppercase">
+        <div class="container mx-auto pt-10 text-center text-slate-800 text-[8px] tracking-[0.6em]">
             © 2026 M&J COMÉRCIO E SERVIÇOS LTDA. Todos os direitos reservados.
         </div>
     </footer>
 
-    <a href="https://wa.me/5591992203081" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-[100] animate-bounce text-white">
-        <i class="fab fa-whatsapp text-3xl text-white"></i>
+    <a href="https://wa.me/5591992203081" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-[100] animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
 </body>
