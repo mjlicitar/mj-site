@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Tecnologia & Soluções Críticas</title>
+    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Tecnologia & Licitações</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -12,15 +12,13 @@
         .hero-title { line-height: 0.9; letter-spacing: -0.04em; font-style: italic; font-weight: 900; }
         .glass-nav { background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); }
         .section-white { background-color: white; color: #0f172a; }
-        .card-hover { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
-        .card-hover:hover { transform: translateY(-8px); border-color: var(--brand-blue); background: rgba(30, 41, 59, 0.5); }
+        .portal-card { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .portal-card:hover { border-color: var(--brand-blue); background: rgba(15, 23, 42, 1); }
         .hero-bg {
             position: relative;
             background-image: linear-gradient(rgba(3, 7, 18, 0.6), rgba(3, 7, 18, 0.9)), 
                               url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
     </style>
 </head>
@@ -39,17 +37,15 @@
                 <a href="#sobre" class="hover:text-blue-500 transition">A Empresa</a>
                 <a href="#solucoes" class="hover:text-blue-500 transition">Serviços</a>
                 <a href="#portal" class="hover:text-blue-400 transition text-blue-500 underline underline-offset-8 font-black">Área do Cliente</a>
+                <a href="#licitante" class="hover:text-blue-400 transition text-blue-500 font-black">Área do Licitante</a>
                 <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full text-white shadow-lg hover:bg-blue-700 transition">ASSESSORIA VIP</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-bg py-32 md:py-56 px-6 text-center border-b border-blue-900/30">
-        <div class="container mx-auto relative z-10 text-center">
-            <div class="inline-block px-4 py-1 mb-6 border border-blue-500/30 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-black uppercase tracking-[0.3em]">
-                CONECTIVIDADE E INFRAESTRUTURA DE ELITE
-            </div>
-            <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8 drop-shadow-2xl text-center">
+        <div class="container mx-auto relative z-10">
+            <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8 drop-shadow-2xl">
                 TECNOLOGIA <br><span class="text-blue-600">SEM FRONTEIRAS</span>
             </h1>
             <p class="text-base md:text-xl text-slate-300 max-w-3xl mx-auto mb-12 italic font-light drop-shadow">
@@ -62,52 +58,75 @@
         </div>
     </header>
 
-    <section id="portal" class="py-24 bg-slate-950 border-y border-slate-900">
+    <section id="licitante" class="py-24 bg-slate-900 border-b border-slate-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-center text-4xl font-black uppercase italic mb-16 tracking-tighter text-white">Área do Cliente</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+            <h2 class="text-center text-4xl font-black uppercase italic mb-16 tracking-tighter text-white">Área do Licitante</h2>
+            <div class="grid md:grid-cols-3 gap-8 italic font-black uppercase">
                 
-                <div class="bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-800 italic uppercase font-black text-center relative overflow-hidden">
-                    <i class="fas fa-truck-monster text-3xl text-slate-600 mb-6"></i>
-                    <h4 class="text-slate-500 text-xs mb-8">Rastreamento Veicular</h4>
-                    <button disabled class="w-full bg-slate-800 text-slate-600 py-4 rounded-xl text-[10px] cursor-not-allowed uppercase font-black">Em Manutenção</button>
-                    <p class="mt-4 text-[8px] text-red-600/60 animate-pulse tracking-widest">SISTEMA INDISPONÍVEL</p>
-                </div>
-
-                <a href="https://myaccount.findmespot.com/login" target="_blank" class="bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-800 italic uppercase font-black text-center hover:border-blue-600 transition-all group">
-                    <i class="fas fa-map-marker-alt text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-white text-xs mb-8">Rastreamento SPOT</h4>
-                    <div class="w-full bg-blue-600 text-white py-4 rounded-xl text-[10px] group-hover:bg-blue-700 transition font-black">Acessar Plataforma</div>
+                <a href="https://licitei.com.br/login" target="_blank" class="portal-card p-10 rounded-[2.5rem] text-center hover:border-blue-500 transition-all group">
+                    <i class="fas fa-gavel text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-white text-xs mb-8">Login Licitei</h4>
+                    <div class="w-full bg-blue-600 text-white py-4 rounded-xl text-[10px] group-hover:bg-blue-700 transition">Acessar Plataforma</div>
                 </a>
 
-                <a href="https://starlink.com/auth/login" target="_blank" class="bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-800 italic uppercase font-black text-center hover:border-blue-600 transition-all group">
-                    <i class="fas fa-satellite text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-white text-xs mb-8">Internet Starlink</h4>
-                    <div class="w-full bg-blue-600 text-white py-4 rounded-xl text-[10px] group-hover:bg-blue-700 transition font-black">Acessar Painel</div>
+                <a href="https://www.comprasnet.gov.br/seguro/loginPortalFornecedor.asp" target="_blank" class="portal-card p-10 rounded-[2.5rem] text-center hover:border-blue-500 transition-all group">
+                    <i class="fas fa-university text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-white text-xs mb-8">Login Comprasnet</h4>
+                    <div class="w-full bg-blue-600 text-white py-4 rounded-xl text-[10px] group-hover:bg-blue-700 transition">Acessar Fornecedor</div>
+                </a>
+
+                <a href="https://pncp.gov.br/app/editais?pagina=1" target="_blank" class="portal-card p-10 rounded-[2.5rem] text-center hover:border-blue-500 transition-all group">
+                    <i class="fas fa-file-contract text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-white text-xs mb-8">Consulta PNCP</h4>
+                    <div class="w-full bg-blue-600 text-white py-4 rounded-xl text-[10px] group-hover:bg-blue-700 transition">Acessar Editais</div>
                 </a>
 
             </div>
         </div>
     </section>
 
-    <section id="solucoes" class="py-24 bg-slate-900 text-white">
-        <div class="container mx-auto px-6 text-center md:text-left">
-            <h2 class="text-center text-4xl font-black uppercase italic mb-16 tracking-tighter">Nossas Soluções</h2>
+    <section id="portal" class="py-24 bg-slate-950 border-b border-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-4xl font-black uppercase italic mb-16 tracking-tighter text-white">Área do Cliente</h2>
+            <div class="grid md:grid-cols-3 gap-8 italic font-black uppercase text-center">
+                <div class="bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-800 relative overflow-hidden">
+                    <i class="fas fa-truck-monster text-3xl text-slate-600 mb-6"></i>
+                    <h4 class="text-slate-500 text-xs mb-8">Rastreamento Veicular</h4>
+                    <button disabled class="w-full bg-slate-800 text-slate-600 py-4 rounded-xl text-[10px] cursor-not-allowed uppercase font-black">Em Manutenção</button>
+                    <p class="mt-4 text-[8px] text-red-600/60 animate-pulse tracking-widest uppercase">Sistema Indisponível</p>
+                </div>
+                <a href="https://myaccount.findmespot.com/login" target="_blank" class="bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-800 hover:border-blue-500 transition-all group">
+                    <i class="fas fa-map-marker-alt text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-white text-xs mb-8">Rastreamento SPOT</h4>
+                    <div class="w-full bg-blue-600 text-white py-4 rounded-xl text-[10px] group-hover:bg-blue-700 transition font-black italic">Acessar Plataforma</div>
+                </a>
+                <a href="https://starlink.com/auth/login" target="_blank" class="bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-800 hover:border-blue-600 transition-all group text-white">
+                    <i class="fas fa-satellite text-3xl text-blue-600 mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-white text-xs mb-8 italic">Internet Starlink</h4>
+                    <div class="w-full bg-blue-600 text-white py-4 rounded-xl text-[10px] group-hover:bg-blue-700 transition font-black">Acessar Painel</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="py-24 bg-slate-900 text-white italic font-black uppercase">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-4xl font-black italic mb-16 tracking-tighter">Nossas Soluções</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-slate-800/40 p-10 rounded-[2.5rem] card-hover">
                     <i class="fas fa-satellite text-4xl text-blue-600 mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase italic">TI & Satélite</h4>
-                    <p class="text-slate-400 text-sm italic font-medium leading-relaxed">Conectividade Starlink para áreas remotas e gestão de infraestrutura crítica governamental.</p>
+                    <h4 class="text-xl font-black mb-4">TI & Satélite</h4>
+                    <p class="text-slate-400 text-sm italic normal-case mb-6 font-medium leading-relaxed">Conectividade Starlink para áreas remotas e gestão de infraestrutura crítica governamental.</p>
                 </div>
                 <div class="bg-slate-800/40 p-10 rounded-[2.5rem] card-hover">
                     <i class="fas fa-map-marker-alt text-4xl text-blue-600 mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase italic">Rastreamento</h4>
-                    <p class="text-slate-400 text-sm italic font-medium leading-relaxed">Rastreamento veicular GPRS/GPS, gestão de frotas e monitoramento pessoal em tempo real.</p>
+                    <h4 class="text-xl font-black mb-4">Rastreamento</h4>
+                    <p class="text-slate-400 text-sm italic normal-case mb-6 font-medium leading-relaxed">Rastreamento veicular GPRS/GPS, gestão de frotas e monitoramento pessoal em tempo real.</p>
                 </div>
-                <div class="bg-blue-600 p-10 rounded-[2.5rem] shadow-2xl transform hover:scale-105 transition duration-500 text-white">
+                <div class="bg-blue-600 p-10 rounded-[2.5rem] shadow-2xl transform hover:scale-105 transition duration-500">
                     <i class="fas fa-print text-4xl text-white mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase italic text-white">Outsourcing</h4>
-                    <p class="text-blue-100 text-sm italic font-medium leading-relaxed text-white">Locação e gestão de parques de impressão com redução de custos e manutenção inclusa.</p>
+                    <h4 class="text-xl font-black mb-4">Outsourcing</h4>
+                    <p class="text-blue-100 text-sm italic normal-case mb-6 font-medium leading-relaxed">Locação e gestão de parques de impressão com redução de custos e manutenção inclusa.</p>
                 </div>
             </div>
         </div>
@@ -116,9 +135,9 @@
     <footer class="py-20 px-6 bg-black text-white italic uppercase font-black border-t border-slate-900">
         <div class="container mx-auto grid md:grid-cols-3 gap-12 border-b border-slate-800 pb-16">
             <div>
-                <h3 class="text-2xl mb-6 text-blue-600 tracking-tighter italic">M&J <span class="text-white">COMÉRCIO</span></h3>
+                <h3 class="text-2xl mb-6 text-blue-600 tracking-tighter">M&J <span class="text-white font-black italic">COMÉRCIO</span></h3>
                 <p class="text-slate-500 text-[10px] mb-4 tracking-[0.3em] font-black uppercase text-white">CNPJ: 39.469.099/0001-00</p>
-                <p class="text-slate-400 text-xs tracking-widest normal-case font-medium italic leading-relaxed text-justify text-white">Excelência tecnológica e conectividade estratégica em missões críticas desde 2020.</p>
+                <p class="text-slate-400 text-xs tracking-widest normal-case font-medium leading-relaxed text-justify text-white italic">M&J COMÉRCIO E SERVIÇOS LTDA: Infraestrutura de TI e Conectividade Satelital para Missões Críticas.</p>
             </div>
             <div>
                 <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 font-black uppercase italic text-white text-center md:text-left">Canais Oficiais</h4>
@@ -133,11 +152,11 @@
                 <div class="text-center md:text-right">
                     <p class="text-slate-200 text-xs mb-2 font-black uppercase italic">Av. Senador Lemos, 791 - Umarizal</p>
                     <p class="text-slate-500 font-mono tracking-widest text-blue-500 text-[10px]">CEP: 66.050-000 | Belém-PA</p>
-                    <p class="mt-10 text-slate-400 border-t border-slate-900 pt-6 tracking-[0.2em] font-black uppercase text-[10px] text-white">Angelo Souto - CEO</p>
+                    <p class="mt-10 text-slate-400 border-t border-slate-900 pt-6 tracking-[0.2em] font-black uppercase text-[10px] text-white italic">Angelo Souto - CEO</p>
                 </div>
             </div>
         </div>
-        <div class="container mx-auto pt-10 text-center text-slate-800 text-[8px] font-black tracking-[0.8em] uppercase text-white">
+        <div class="container mx-auto pt-10 text-center text-slate-800 text-[8px] font-black tracking-[0.6em] uppercase text-white italic">
             © 2026 M&J COMÉRCIO E SERVIÇOS LTDA. Todos os direitos reservados.
         </div>
     </footer>
