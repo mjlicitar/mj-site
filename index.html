@@ -9,12 +9,10 @@
     <style>
         :root { --deep-bg: #030712; --brand-blue: #2563eb; }
         body { background-color: var(--deep-bg); color: white; font-family: 'Inter', sans-serif; }
-        .hero-title { line-height: 0.85; letter-spacing: -0.05em; }
+        .hero-title { line-height: 0.85; letter-spacing: -0.05em; font-style: italic; font-weight: 900; }
         .glass-nav { background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); }
         .section-white { background-color: white; color: #0f172a; }
-        .btn-impact { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .btn-impact:hover { transform: scale(1.05); filter: brightness(1.2); }
-        .italic-black { font-style: italic; font-weight: 900; }
+        .card-hover:hover { transform: translateY(-10px); border-color: var(--brand-blue); transition: all 0.3s ease; }
     </style>
 </head>
 <body>
@@ -26,25 +24,24 @@
                 <span class="text-xl font-black tracking-tighter uppercase italic">M&J <span class="text-blue-500 font-black">COMÉRCIO</span></span>
             </div>
             <div class="hidden lg:flex items-center space-x-8 font-black text-[10px] uppercase tracking-[0.2em] text-slate-400">
-                <a href="#sobre" class="hover:text-blue-500 transition italic">A Empresa</a>
-                <a href="#solucoes" class="hover:text-blue-500 transition italic">Serviços</a>
-                <a href="#portfolio" class="hover:text-blue-500 transition italic">Portfólio</a>
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-8 py-3 rounded-full text-white btn-impact shadow-[0_0_20px_rgba(37,99,235,0.3)]">ASSESSORIA VIP</a>
+                <a href="#sobre" class="hover:text-blue-500 transition">A Empresa</a>
+                <a href="#solucoes" class="hover:text-blue-500 transition">Serviços</a>
+                <a href="#portfolio" class="hover:text-blue-500 transition">Portfólio</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-8 py-3 rounded-full text-white shadow-lg hover:bg-blue-700 transition">ASSESSORIA VIP</a>
             </div>
         </div>
     </nav>
 
     <header class="py-32 md:py-56 px-6 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--brand-blue)_0%,_transparent_70%)]"></div>
         <div class="container mx-auto relative z-10">
-            <h1 class="hero-title text-6xl md:text-9xl italic-black uppercase mb-10 leading-none">
+            <h1 class="hero-title text-6xl md:text-9xl uppercase mb-10">
                 ESTRATEGIA <br><span class="text-blue-600">NACIONAL</span>
             </h1>
-            <p class="text-lg md:text-2xl text-slate-400 max-w-4xl mx-auto mb-16 italic font-light leading-relaxed">
+            <p class="text-lg md:text-2xl text-slate-400 max-w-4xl mx-auto mb-16 italic font-light">
                 M&J COMÉRCIO E SERVIÇOS LTDA: Infraestrutura de TI e Inteligência em Licitações para Órgãos de Elite desde 2020.
             </p>
             <div class="flex flex-wrap justify-center gap-6">
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-16 py-7 rounded-2xl font-black uppercase tracking-widest text-xs italic btn-impact shadow-2xl">FALAR COM ESPECIALISTA</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-16 py-7 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-blue-700 transition-all shadow-2xl">FALAR COM ESPECIALISTA</a>
                 <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/5 border border-white/20 text-white px-16 py-7 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-white hover:text-slate-950 transition-all">E-MAIL CORPORATIVO</a>
             </div>
         </div>
@@ -53,58 +50,6 @@
     <section id="sobre" class="section-white py-32">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
             <div>
-                <h2 class="text-6xl font-black uppercase italic mb-10 border-l-[12px] border-blue-600 pl-8 tracking-tighter leading-none">A Empresa</h2>
-                <div class="space-y-8 text-xl italic leading-relaxed text-slate-600 font-medium">
-                    <p>Referência em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 no fornecimento de soluções críticas para o setor público.</p>
-                    <p>Liderada pelo CEO <strong>Angelo Souto</strong>, a empresa é homologada por instituições de rigor máximo.</p>
-                </div>
-            </div>
-            <div class="bg-slate-900 p-14 rounded-[4rem] text-white shadow-2xl transform -rotate-2">
-                <h3 class="text-3xl font-black mb-6 text-blue-500 uppercase italic">Visão M&J</h3>
-                <p class="text-2xl font-light italic leading-relaxed">"Ser a maior estrutura de apoio a licitações do país, integrando tecnologia de ponta e consultoria especializada."</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 text-center border-t border-slate-900">
-        <div class="container mx-auto px-6">
-            <h3 class="text-slate-500 font-black uppercase tracking-[0.5em] mb-16 text-[10px] italic">Autoridade Homologada</h3>
-            <div class="flex flex-wrap justify-center gap-x-16 gap-y-12 text-3xl md:text-5xl font-black italic tracking-tighter opacity-80 uppercase leading-none">
-                <span>PRF</span><span>CIGS</span><span>2ª BRIGADA</span><span>4º BAVEX</span><span>TRT 10</span><span>BDA OP ESPECIAIS</span>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-24 px-6 border-t border-slate-900 bg-black">
-        <div class="container mx-auto grid md:grid-cols-3 gap-16 border-b border-slate-900 pb-20 italic font-black uppercase text-[10px] tracking-widest">
-            <div>
-                <h3 class="text-3xl font-black mb-8 italic text-blue-600 tracking-tighter italic">M&J <span class="text-white">COMÉRCIO</span></h3>
-                <p class="text-slate-500 mb-6 tracking-[0.4em]">CNPJ: 39.469.099/0001-00</p>
-                <p class="text-slate-400 leading-relaxed">Inteligência em Licitações e Conectividade Satelital desde 2020.</p>
-            </div>
-            <div>
-                <h4 class="mb-12 text-blue-600 italic">Canais Oficiais</h4>
-                <div class="space-y-6 text-sm tracking-widest normal-case">
-                    <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-blue-600"></i> (91) 99220-3081</p>
-                    <p class="flex items-center gap-4"><i class="fas fa-envelope text-blue-600"></i> comercial@mjlicitar.com.br</p>
-                    <p class="flex items-center gap-4"><i class="fab fa-instagram text-blue-600"></i> @mj_licitacores</p>
-                </div>
-            </div>
-            <div>
-                <h4 class="mb-12 text-blue-600 italic">Localização Matriz</h4>
-                <p class="text-slate-200 text-sm mb-3">Av. Senador Lemos, 791 - Umarizal</p>
-                <p class="text-slate-500 font-mono text-blue-500">CEP: 66.050-000 | Belém-PA</p>
-                <p class="mt-14 text-slate-400 border-t border-slate-900 pt-8 tracking-[0.3em]">Angelo Souto - CEO</p>
-            </div>
-        </div>
-        <div class="container mx-auto pt-14 text-center text-slate-800 text-[9px] font-black tracking-[0.8em] uppercase">
-            © 2026 M&J COMÉRCIO E SERVIÇOS LTDA. Todos os direitos reservados.
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5591992203081" target="_blank" class="fixed bottom-10 right-10 bg-green-500 text-white w-20 h-20 rounded-full shadow-[0_10px_40px_rgba(34,197,94,0.4)] flex items-center justify-center hover:scale-110 transition-all z-[100] animate-bounce">
-        <i class="fab fa-whatsapp text-5xl"></i>
-    </a>
-
-</body>
-</html>
+                <h2 class="text-6xl font-black uppercase italic mb-10 border-l-[12px] border-blue-600 pl-8 tracking-tighter">A Empresa</h2>
+                <div class="space-y-8 text-xl italic leading-relaxed text-slate-600 font-medium text-justify">
+                    <p>Referência em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 no forne
