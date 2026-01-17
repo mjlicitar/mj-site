@@ -10,6 +10,7 @@
         .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
         .glass-nav { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); }
         .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
+        .section-divider { height: 4px; width: 100px; background: #3b82f6; margin: 20px auto; border-radius: 2px; }
     </style>
 </head>
 <body class="bg-white text-slate-800 font-sans leading-normal">
@@ -24,9 +25,10 @@
                 </div>
             </div>
             <div class="hidden lg:flex space-x-8 font-medium text-[10px] uppercase tracking-[0.2em]">
-                <a href="#sobre" class="hover:text-blue-400 transition italic">A Empresa</a>
+                <a href="#sobre" class="hover:text-blue-400 transition italic">Sobre Nós</a>
+                <a href="#missao" class="hover:text-blue-400 transition italic">Missão & Visão</a>
                 <a href="#solucoes" class="hover:text-blue-400 transition italic">Serviços</a>
-                <a href="#clientes" class="hover:text-blue-400 transition italic">Portfólio</a>
+                <a href="#clientes" class="hover:text-blue-400 transition italic">Clientes</a>
                 <a href="#assessoria" class="bg-blue-600 px-6 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg text-white font-bold italic">Assessoria VIP</a>
             </div>
         </div>
@@ -35,4 +37,12 @@
     <header class="relative hero-gradient py-32 md:py-56 px-6 overflow-hidden border-b-8 border-blue-600">
         <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')] bg-cover bg-center"></div>
         <div class="container mx-auto relative z-10 text-center">
-            <h1 class="text-
+            <h1 class="text-5xl md:text-8xl font-black text-white mb-8 uppercase italic tracking-tighter leading-[0.85]">
+                Inteligência e <br><span class="text-blue-500 font-extrabold italic">Estratégia Nacional</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-14 leading-relaxed italic font-light">
+                M&J COMÉRCIO E SERVIÇOS LTDA: Soluções críticas em TI, Internet Satelital e Assessoria Técnica para instituições de elite em todo o Brasil.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-14 py-6 rounded-2xl font-black hover:bg-blue-700 transition shadow-2xl uppercase tracking-[0.2em] text-xs italic">Fale Conosco</a>
+                <a href="https://www.instagram.com/mj_licitacores" target="_blank" class="bg-white/10 backdrop-blur-md border border-white/2
