@@ -12,8 +12,6 @@
         .hero-title { line-height: 0.9; letter-spacing: -0.04em; font-style: italic; font-weight: 900; }
         .glass-nav { background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); }
         .section-white { background-color: white; color: #0f172a; }
-        .portal-card { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-        .portal-card:hover { border-color: var(--brand-blue); background: rgba(15, 23, 42, 1); }
         .hero-bg {
             position: relative;
             background-image: linear-gradient(rgba(3, 7, 18, 0.6), rgba(3, 7, 18, 0.9)), 
@@ -38,7 +36,7 @@
             <div class="hidden lg:flex items-center space-x-6 font-black text-[9px] uppercase tracking-[0.2em] text-slate-400">
                 <a href="#sobre" class="hover:text-blue-500 transition">A Empresa</a>
                 <a href="#solucoes" class="hover:text-blue-500 transition">Serviços</a>
-                <a href="#portal" class="hover:text-blue-400 transition text-blue-500 underline underline-offset-8">Acesso Restrito</a>
+                <a href="#portal" class="hover:text-blue-400 transition text-blue-500 underline underline-offset-8 font-black">Acesso Restrito</a>
                 <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full text-white shadow-lg hover:bg-blue-700 transition">ASSESSORIA VIP</a>
             </div>
         </div>
@@ -46,9 +44,6 @@
 
     <header class="hero-bg py-32 md:py-56 px-6 text-center border-b border-blue-900/30">
         <div class="container mx-auto relative z-10">
-            <div class="inline-block px-4 py-1 mb-6 border border-blue-500/30 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-black uppercase tracking-[0.3em]">
-                ALTA PERFORMANCE GOVERNAMENTAL
-            </div>
             <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8 drop-shadow-2xl">
                 INTELIGÊNCIA <br><span class="text-blue-600">TECNOLÓGICA</span>
             </h1>
@@ -57,12 +52,28 @@
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-12 py-5 rounded-xl font-black uppercase tracking-widest text-[10px] italic hover:bg-blue-700 shadow-xl transition-all">FALAR COM ESPECIALISTA</a>
-                <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/5 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-xl font-black uppercase tracking-widest text-[10px] italic hover:bg-white hover:text-slate-950 transition-all text-white">E-MAIL CORPORATIVO</a>
+                <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/5 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-xl font-black uppercase tracking-widest text-[10px] italic hover:bg-white hover:text-slate-950 transition-all">E-MAIL CORPORATIVO</a>
             </div>
         </div>
     </header>
 
-    <section id="portal" class="py-20 bg-slate-900 border-y border-slate-800 text-white">
+    <section id="sobre" class="section-white py-24">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-black uppercase italic mb-8 border-l-[10px] border-blue-600 pl-6 tracking-tighter text-slate-900">A Empresa</h2>
+                <div class="space-y-6 text-base italic leading-relaxed text-slate-600 font-medium text-justify">
+                    <p>Referência em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 no fornecimento de soluções críticas para o setor público e privado sob a gestão do CEO <strong>Angelo Souto</strong>.</p>
+                    <p>Somos especialistas em implementar redes resilientes e suporte técnico de alto nível para instituições de rigor máximo como a PRF e o CIGS.</p>
+                </div>
+            </div>
+            <div class="bg-slate-900 p-10 rounded-[3rem] text-white shadow-2xl">
+                <h3 class="text-2xl font-black mb-4 text-blue-500 uppercase italic">Nossa Missão</h3>
+                <p class="text-lg font-light italic leading-relaxed">"Prover conectividade resiliente e inteligência tecnológica, garantindo que missões fundamentais nunca parem por falta de infraestrutura."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portal" class="py-20 bg-slate-900 border-y border-slate-800">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 text-center md:text-left">
             <div class="bg-slate-800/50 p-10 rounded-[2.5rem] border border-slate-700 italic uppercase font-black">
                 <h4 class="text-blue-500 text-[10px] mb-4 border-b-2 border-blue-600 pb-2 inline-block">Área Administrativa</h4>
@@ -90,26 +101,26 @@
     <footer class="py-20 px-6 bg-black text-white italic uppercase font-black border-t border-slate-900">
         <div class="container mx-auto grid md:grid-cols-3 gap-12 border-b border-slate-800 pb-16">
             <div>
-                <h3 class="text-2xl mb-6 text-blue-600 tracking-tighter italic">M&J <span class="text-white">COMÉRCIO</span></h3>
-                <p class="text-slate-500 text-[10px] mb-4 tracking-[0.3em] text-white font-black">CNPJ: 39.469.099/0001-00</p>
-                <p class="text-slate-400 text-xs tracking-widest normal-case font-medium italic leading-relaxed text-white">Referência em Belém/PA: Inovação e conectividade estratégica para Órgãos de Elite.</p>
+                <h3 class="text-2xl mb-6 text-blue-600 tracking-tighter italic">M&J <span class="text-white font-black italic">COMÉRCIO</span></h3>
+                <p class="text-slate-500 text-[10px] mb-4 tracking-[0.3em] font-black uppercase text-white">CNPJ: 39.469.099/0001-00</p>
+                <p class="text-slate-400 text-xs tracking-widest normal-case font-medium italic leading-relaxed text-justify text-white">Referência em Belém/PA: Inovação e conectividade estratégica para Órgãos de Elite.</p>
             </div>
             <div>
-                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 italic">Canais Oficiais</h4>
-                <div class="space-y-4 text-xs tracking-widest normal-case text-white font-black">
-                    <p><i class="fas fa-phone-alt text-blue-600 mr-2"></i> (91) 99220-3081</p>
-                    <p><i class="fas fa-envelope text-blue-600 mr-2"></i> comercial@mjlicitar.com.br</p>
-                    <p><i class="fab fa-instagram text-blue-600 mr-2"></i> @mj_licitacores</p>
+                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 font-black uppercase italic">Canais Oficiais</h4>
+                <div class="space-y-4 text-xs tracking-widest font-black uppercase text-white">
+                    <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-blue-600"></i> (91) 99220-3081</p>
+                    <p class="flex items-center gap-4"><i class="fas fa-envelope text-blue-600"></i> comercial@mjlicitar.com.br</p>
+                    <p class="flex items-center gap-4"><i class="fab fa-instagram text-blue-600"></i> @mj_licitacores</p>
                 </div>
             </div>
             <div>
-                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 italic">Sede Estratégica</h4>
-                <p class="text-slate-200 text-xs mb-2 text-white font-black uppercase">Av. Senador Lemos, 791 - Umarizal</p>
+                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-blue-600 font-black uppercase italic">Sede Estratégica</h4>
+                <p class="text-slate-200 text-xs mb-2 text-white font-black uppercase italic">Av. Senador Lemos, 791 - Umarizal</p>
                 <p class="text-slate-500 font-mono tracking-widest text-blue-500 text-[10px]">CEP: 66.050-000 | Belém-PA</p>
-                <p class="mt-10 text-slate-400 border-t border-slate-900 pt-6 tracking-[0.2em] text-[10px] text-white font-black uppercase">Angelo Souto - CEO</p>
+                <p class="mt-10 text-slate-400 border-t border-slate-900 pt-6 tracking-[0.2em] font-black uppercase text-[10px] text-white">Angelo Souto - CEO</p>
             </div>
         </div>
-        <div class="container mx-auto pt-10 text-center text-slate-800 text-[8px] tracking-[0.8em] font-black uppercase text-white">
+        <div class="container mx-auto pt-10 text-center text-slate-800 text-[8px] font-black tracking-[0.8em] uppercase text-white">
             © 2026 M&J COMÉRCIO E SERVIÇOS LTDA. Todos os direitos reservados.
         </div>
     </footer>
