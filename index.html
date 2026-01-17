@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Inteligência Governamental</title>
+    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Inteligência em Licitações</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --deep-bg: #030712; --brand-blue: #2563eb; }
         body { background-color: var(--deep-bg); color: white; font-family: 'Inter', sans-serif; }
-        .hero-title { line-height: 0.9; letter-spacing: -0.05em; }
+        .hero-title { line-height: 0.85; letter-spacing: -0.05em; }
         .glass-nav { background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); }
-        .section-light { background-color: white; color: #0f172a; }
+        .section-white { background-color: white; color: #0f172a; }
+        .btn-impact { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-impact:hover { transform: scale(1.05); filter: brightness(1.2); }
+        .italic-black { font-style: italic; font-weight: 900; }
     </style>
 </head>
 <body>
@@ -19,59 +22,36 @@
     <nav class="glass-nav p-5 sticky top-0 z-50 border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <div class="w-12 h-10 bg-blue-600 rounded flex items-center justify-center font-black text-xl italic text-white">M&J</div>
-                <span class="text-xl font-black tracking-tighter uppercase italic">M&J <span class="text-blue-500">COMÉRCIO</span></span>
+                <div class="w-12 h-10 bg-blue-600 rounded flex items-center justify-center font-black text-xl italic text-white shadow-lg">M&J</div>
+                <span class="text-xl font-black tracking-tighter uppercase italic">M&J <span class="text-blue-500 font-black">COMÉRCIO</span></span>
             </div>
-            <div class="hidden lg:flex items-center space-x-8 font-bold text-[10px] uppercase tracking-widest text-slate-400">
-                <a href="#sobre" class="hover:text-blue-500 transition">A Empresa</a>
-                <a href="#solucoes" class="hover:text-blue-500 transition">Serviços</a>
-                <a href="#portfolio" class="hover:text-blue-500 transition">Portfólio</a>
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition text-white">ASSESSORIA VIP</a>
+            <div class="hidden lg:flex items-center space-x-8 font-black text-[10px] uppercase tracking-[0.2em] text-slate-400">
+                <a href="#sobre" class="hover:text-blue-500 transition italic">A Empresa</a>
+                <a href="#solucoes" class="hover:text-blue-500 transition italic">Serviços</a>
+                <a href="#portfolio" class="hover:text-blue-500 transition italic">Portfólio</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 px-8 py-3 rounded-full text-white btn-impact shadow-[0_0_20px_rgba(37,99,235,0.3)]">ASSESSORIA VIP</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-40 md:py-60 px-6 text-center">
-        <div class="container mx-auto">
-            <h1 class="hero-title text-6xl md:text-9xl font-black italic uppercase mb-8">
-                ESTRATÉGIA <br><span class="text-blue-600">NACIONAL</span>
+    <header class="py-32 md:py-56 px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--brand-blue)_0%,_transparent_70%)]"></div>
+        <div class="container mx-auto relative z-10">
+            <h1 class="hero-title text-6xl md:text-9xl italic-black uppercase mb-10 leading-none">
+                ESTRATEGIA <br><span class="text-blue-600">NACIONAL</span>
             </h1>
-            <p class="text-lg md:text-2xl text-slate-400 max-w-4xl mx-auto mb-16 italic font-light">
-                M&J COMÉRCIO E SERVIÇOS LTDA: Infraestrutura de TI e Inteligência em Licitações desde 2020.
+            <p class="text-lg md:text-2xl text-slate-400 max-w-4xl mx-auto mb-16 italic font-light leading-relaxed">
+                M&J COMÉRCIO E SERVIÇOS LTDA: Infraestrutura de TI e Inteligência em Licitações para Órgãos de Elite desde 2020.
             </p>
             <div class="flex flex-wrap justify-center gap-6">
-                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-16 py-6 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-blue-700 shadow-2xl transition-all">FALAR COM ESPECIALISTA</a>
-                <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/5 border border-white/20 text-white px-16 py-6 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-white hover:text-slate-900 transition-all">E-MAIL CORPORATIVO</a>
+                <a href="https://wa.me/5591992203081" target="_blank" class="bg-blue-600 text-white px-16 py-7 rounded-2xl font-black uppercase tracking-widest text-xs italic btn-impact shadow-2xl">FALAR COM ESPECIALISTA</a>
+                <a href="mailto:comercial@mjlicitar.com.br" class="bg-white/5 border border-white/20 text-white px-16 py-7 rounded-2xl font-black uppercase tracking-widest text-xs italic hover:bg-white hover:text-slate-950 transition-all">E-MAIL CORPORATIVO</a>
             </div>
         </div>
     </header>
 
-    <section id="sobre" class="section-light py-24">
+    <section id="sobre" class="section-white py-32">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
             <div>
-                <h2 class="text-5xl font-black uppercase italic mb-8 border-l-8 border-blue-600 pl-6 tracking-tighter">A Empresa</h2>
-                <div class="space-y-6 text-lg italic leading-relaxed text-slate-600">
-                    <p>Operando com excelência desde 2020, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> consolidou-se em Belém/PA como parceira estratégica governamental.</p>
-                    <p>Sob a gestão do CEO <strong>Angelo Souto</strong>, unimos rigor técnico e agilidade para atender PRF, CIGS e instituições de elite.</p>
-                </div>
-            </div>
-            <div class="bg-slate-900 p-12 rounded-[3.5rem] text-white shadow-2xl">
-                <h3 class="text-3xl font-black mb-6 text-blue-500 uppercase italic">Visão Nacional</h3>
-                <p class="text-xl font-light italic italic leading-relaxed">"Tornar-se a maior referência em licitações do Brasil, dominando o fornecimento tecnológico governamental."</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 text-center border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <h3 class="text-slate-500 font-bold uppercase tracking-[0.5em] mb-16 text-[10px] italic">Autoridade Homologada</h3>
-            <div class="flex flex-wrap justify-center gap-x-12 gap-y-10 text-3xl md:text-5xl font-black italic tracking-tighter opacity-80 uppercase">
-                <span>PRF</span><span>CIGS</span><span>2ª BRIGADA</span><span>4º BAVEX</span><span>TRT 10</span><span>BDA OP ESPECIAIS</span>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-24 px-6 border-t border-slate-800">
-        <div class="container mx-auto grid md:grid-cols-3 gap-16 border-b border-slate-900 pb-20 italic">
-            <div>
-                <h3 class="text-3xl font-black mb-8 uppercase italic text-blue-500 tracking-tighter">M&J
+                <h2 class="text-6xl font-black uppercase italic mb-10 border-l-[12px] border-blue-600 pl-8 tracking-tighter leading-none">A Empresa</h2>
+                <div class="space-y-8 text-xl italic leading-relaxed text-slate-600
