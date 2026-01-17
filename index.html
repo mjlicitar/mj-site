@@ -3,32 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&J COMÉRCIO E SERVIÇOS LTDA | TI, Satélite & Assessoria</title>
+    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Portfólio de Elite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .glass-nav { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); }
-        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
-        .text-glow { text-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+        .hero-gradient { background: linear-gradient(135deg, #020617 0%, #0f172a 100%); }
+        .glass-nav { background: rgba(2, 6, 23, 0.98); backdrop-filter: blur(12px); }
+        .portfolio-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
+        .badge-elite { background: linear-gradient(90deg, #1e293b, #0f172a); border: 1px solid #334155; }
     </style>
 </head>
-<body class="bg-white text-slate-800 font-sans leading-normal text-sm">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased text-sm">
 
-    <nav class="glass-nav text-white p-5 sticky top-0 z-50 border-b border-slate-800 shadow-2xl">
+    <nav class="glass-nav text-white p-6 sticky top-0 z-50 border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-black text-xl italic text-white shadow-lg">M&J</div>
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-12 bg-blue-600 rounded-xl flex items-center justify-center font-black text-2xl italic shadow-[0_0_20px_rgba(37,99,235,0.4)]">M&J</div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-bold tracking-tighter uppercase leading-none text-white font-mono">Comércio <span class="text-blue-500">&</span> Serviços</span>
-                    <span class="text-[9px] text-slate-400 tracking-[0.3em] uppercase font-bold mt-1">Excelência desde 2020</span>
+                    <span class="text-xl font-black tracking-tighter uppercase leading-none">M&J <span class="text-blue-500">COMÉRCIO</span></span>
+                    <span class="text-[10px] text-slate-400 tracking-[0.4em] uppercase font-bold mt-1">Inteligência Governamental</span>
                 </div>
             </div>
-            <div class="hidden lg:flex space-x-8 font-medium text-[10px] uppercase tracking-[0.2em]">
-                <a href="#sobre" class="hover:text-blue-400 transition italic">A Empresa</a>
-                <a href="#solucoes" class="hover:text-blue-400 transition italic">Serviços</a>
-                <a href="#clientes" class="hover:text-blue-400 transition italic">Portfólio</a>
-                <a href="#assessoria" class="bg-blue-600 px-6 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg text-white font-bold italic tracking-widest uppercase">Assessoria VIP</a>
+            <div class="hidden lg:flex items-center space-x-10 font-black text-[11px] uppercase tracking-[0.2em]">
+                <a href="#sobre" class="hover:text-blue-500 transition italic">Sobre</a>
+                <a href="#solucoes" class="hover:text-blue-500 transition italic">Soluções</a>
+                <a href="#portfolio" class="text-blue-500 italic">Portfólio de Elite</a>
+                <a href="#assessoria" class="bg-blue-600 px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-xl text-white italic tracking-widest">Assessoria VIP</a>
             </div>
         </div>
     </nav>
+
+    <header class="relative hero-gradient py-40 md:py-60 px-6 overflow-hidden border-b-[12px] border-blue-600">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="container mx-auto relative z-10 text-center">
+            <h1 class="text-7xl md:text-9xl font-black text-white mb-10 uppercase italic tracking-tighter leading-none">
+                Resultados <br><span class="text-blue-600 font-black">Inquestionáveis</span>
+            </h1>
+            <p class="text-2xl md:text-3xl text-slate-400 max-w-5xl mx-auto mb-16 leading-relaxed italic font-light">
+                A M&J COMÉRCIO E SERVIÇOS LTDA entrega infraestrutura crítica e tecnologia para quem protege e move o Brasil.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#portfolio" class="bg-white text-slate-900 px-16 py-7 rounded-2xl font-black hover:bg-blue-600 hover:text-white transition shadow-2xl uppercase tracking-widest text-xs italic">Ver Cases de Sucesso</a>
+                <a href="mailto:comercial@mjlicitar.com.br" class="bg-blue-600/10 border border-blue-600/30 text-blue-400 px-16 py-7 rounded-2xl font-black hover:bg-blue-600 hover:text-white transition uppercase tracking-widest text-xs italic">E-mail Corporativo</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="portfolio" class="py-32 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                <div class="max-w-3xl">
+                    <h2 class="text-6xl font-black uppercase italic tracking-tighter leading-none mb-6 border-l-[15px] border-blue-600 pl-8">Portfólio <br>de Elite</h2>
+                    <p class="text-xl text-slate-400 italic">Experiência técnica comprovada em contratos de alta complexidade com órgãos de defesa, segurança e judiciário.</p>
+                </div>
+                <div class="badge-elite p-8 rounded-[2rem] text-center min-w-[250px]">
+                    <span class="block text-4xl font-black text-blue-500 italic">100%</span>
+                    <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-slate-400 italic">Taxa de Entrega Técnica</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="portfolio-card bg-slate-800/50 border border-slate-700 p-10 rounded-[3rem] transition-all duration-500">
+                    <span class="text-blue-500 font-black text-[10px] uppercase tracking-widest mb-4 block">Segurança Pública</span>
+                    <h4 class="text-2xl font-black mb-6 italic uppercase tracking-tighter">PRF - Polícia Rodoviária Federal</h4>
+                    <p class="text-slate-400 italic leading-relaxed mb-8">Implementação de soluções de monitoramento e suporte tecnológico para operações de fiscalização nacional.</p>
+                    <div class="flex gap-2 text-[9px] font-bold uppercase tracking-tighter">
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Tecnologia</span>
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Mobilidade</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card bg-slate-800/50 border border-slate-700 p-10 rounded-[3rem] transition-all duration-500">
+                    <span class="text-blue-500 font-black text-[10px] uppercase tracking-widest mb-4 block">Defesa Nacional</span>
+                    <h4 class="text-2xl font-black mb-6 italic uppercase tracking-tighter">CIGS - Centro de Instrução de Guerra na Selva</h4>
+                    <p class="text-slate-400 italic leading-relaxed mb-8">Fornecimento de infraestrutura e serviços especializados em ambiente de selva amazônica para o Exército Brasileiro.</p>
+                    <div class="flex gap-2 text-[9px] font-bold uppercase tracking-tighter">
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Operações Críticas</span>
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Amazônia</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card bg-slate-800/50 border border-slate-700 p-10 rounded-[3rem] transition-all duration-500">
+                    <span class="text-blue-500 font-black text-[10px] uppercase tracking-widest mb-4 block">Aviação Militar</span>
+                    <h4 class="text-2xl font-black mb-6 italic uppercase tracking-tighter">4º BAVEX - Batalhão de Aviação do Exército</h4>
+                    <p class="text-slate-400 italic leading-relaxed mb-8">Soluções de conectividade e suporte técnico especializado para a base aérea de operações na região Norte.</p>
+                    <div class="flex gap-2 text-[9px] font-bold uppercase tracking-tighter">
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Sistemas Aéreos</span>
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Logística</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card bg-slate-800/50 border border-slate-700 p-10 rounded-[3rem] transition-all duration-500">
+                    <span class="text-blue-500 font-black text-[10px] uppercase tracking-widest mb-4 block">Infraestrutura Judiciária</span>
+                    <h4 class="text-2xl font-black mb-6 italic uppercase tracking-tighter">TRT 10 - Tribunal Regional do Trabalho</h4>
+                    <p class="text-slate-400 italic leading-relaxed mb-8">Gestão de contratos de manutenção e fornecimento tecnológico para a rede administrativa do judiciário.</p>
+                    <div class="flex gap-2 text-[9px] font-bold uppercase tracking-tighter">
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Gestão de Ativos</span>
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Compliance</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card bg-slate-800/50 border border-slate-700 p-10 rounded-[3rem] transition-all duration-500">
+                    <span class="text-blue-500 font-black text-[10px] uppercase tracking-widest mb-4 block">Operações Especiais</span>
+                    <h4 class="text-2xl font-black mb-6 italic uppercase tracking-tighter">BDA OP ESPECIAIS - Brigada de Op. Especiais</h4>
+                    <p class="text-slate-400 italic leading-relaxed mb-8">Apoio tecnológico e infraestrutura resiliente para as forças de elite do Comando Militar.</p>
+                    <div class="flex gap-2 text-[9px] font-bold uppercase tracking-tighter">
+                        <span class="bg-slate-700 px-3 py-1 rounded-full">Sigilo</span>
