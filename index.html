@@ -12,6 +12,8 @@
         .hero-title { line-height: 0.9; letter-spacing: -0.04em; font-style: italic; font-weight: 900; }
         .glass-nav { background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); }
         .section-white { background-color: white; color: #0f172a; }
+        .card-hover { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .card-hover:hover { transform: translateY(-8px); border-color: var(--brand-blue); background: rgba(30, 41, 59, 0.5); }
         .hero-bg {
             position: relative;
             background-image: linear-gradient(rgba(3, 7, 18, 0.6), rgba(3, 7, 18, 0.9)), 
@@ -57,18 +59,41 @@
         </div>
     </header>
 
+    <section id="solucoes" class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-4xl font-black uppercase italic mb-16 tracking-tighter text-white">Nossas Soluções</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800/40 p-10 rounded-[2.5rem] card-hover text-center md:text-left">
+                    <i class="fas fa-satellite text-4xl text-blue-600 mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase italic">TI & Satélite</h4>
+                    <p class="text-slate-400 text-sm italic font-medium leading-relaxed">Conectividade Starlink para áreas remotas e gestão de infraestrutura crítica governamental.</p>
+                </div>
+                <div class="bg-slate-800/40 p-10 rounded-[2.5rem] card-hover text-center md:text-left">
+                    <i class="fas fa-server text-4xl text-blue-600 mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase italic">Gestão de Dados</h4>
+                    <p class="text-slate-400 text-sm italic font-medium leading-relaxed">Suporte técnico especializado em servidores e bancos de dados SQL para missões de alta performance.</p>
+                </div>
+                <div class="bg-blue-600 p-10 rounded-[2.5rem] shadow-2xl text-center md:text-left transform hover:scale-105 transition duration-500">
+                    <i class="fas fa-gavel text-4xl text-white mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase italic text-white">Assessoria</h4>
+                    <p class="text-blue-100 text-sm italic font-medium leading-relaxed">Consultoria estratégica para empresas vencerem licitações de base tecnológica no mercado nacional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="sobre" class="section-white py-24">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="text-4xl font-black uppercase italic mb-8 border-l-[10px] border-blue-600 pl-6 tracking-tighter text-slate-900">A Empresa</h2>
                 <div class="space-y-6 text-base italic leading-relaxed text-slate-600 font-medium text-justify">
-                    <p>Referência em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 no fornecimento de soluções críticas para o setor público e privado sob a gestão do CEO <strong>Angelo Souto</strong>.</p>
-                    <p>Somos especialistas em implementar redes resilientes e suporte técnico de alto nível para instituições de rigor máximo como a PRF e o CIGS.</p>
+                    <p>Referência em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 no fornecimento de soluções críticas sob a gestão do CEO <strong>Angelo Souto</strong>.</p>
+                    <p>Homologada por instituições de rigor máximo como a PRF e o CIGS, unimos engenharia de conectividade e inteligência administrativa.</p>
                 </div>
             </div>
             <div class="bg-slate-900 p-10 rounded-[3rem] text-white shadow-2xl">
                 <h3 class="text-2xl font-black mb-4 text-blue-500 uppercase italic">Nossa Missão</h3>
-                <p class="text-lg font-light italic leading-relaxed">"Prover conectividade resiliente e inteligência tecnológica, garantindo que missões fundamentais nunca parem por falta de infraestrutura."</p>
+                <p class="text-lg font-light italic leading-relaxed">"Prover conectividade resiliente e inteligência tecnológica, garantindo que infraestruturas fundamentais nunca parem."</p>
             </div>
         </div>
     </section>
@@ -83,7 +108,7 @@
                     <i class="fas fa-envelope text-blue-500 group-hover:text-white transition"></i>
                 </a>
             </div>
-            <div class="bg-slate-800/50 p-10 rounded-[2.5rem] border border-slate-700 italic uppercase font-black">
+            <div class="bg-slate-800/50 p-10 rounded-[2.5rem] border border-slate-700 italic uppercase font-black text-white">
                 <h4 class="text-green-500 text-[10px] mb-4 border-b-2 border-green-600 pb-2 inline-block">Portal do Usuário</h4>
                 <h3 class="text-2xl mb-6">Portal do Cliente</h3>
                 <div class="space-y-4 text-[10px]">
@@ -101,7 +126,7 @@
     <footer class="py-20 px-6 bg-black text-white italic uppercase font-black border-t border-slate-900">
         <div class="container mx-auto grid md:grid-cols-3 gap-12 border-b border-slate-800 pb-16">
             <div>
-                <h3 class="text-2xl mb-6 text-blue-600 tracking-tighter italic">M&J <span class="text-white font-black italic">COMÉRCIO</span></h3>
+                <h3 class="text-2xl mb-6 text-blue-600 tracking-tighter">M&J <span class="text-white">COMÉRCIO</span></h3>
                 <p class="text-slate-500 text-[10px] mb-4 tracking-[0.3em] font-black uppercase text-white">CNPJ: 39.469.099/0001-00</p>
                 <p class="text-slate-400 text-xs tracking-widest normal-case font-medium italic leading-relaxed text-justify text-white">Referência em Belém/PA: Inovação e conectividade estratégica para Órgãos de Elite.</p>
             </div>
