@@ -3,203 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Tecnologia & Soluções</title>
+    <title>M&J COMÉRCIO E SERVIÇOS LTDA | Painel Administrativo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { 
-            --spot-bg: #1a1a1a; 
-            --spot-orange: #ff6600; 
-            --spot-light-bg: #f4f4f4;
-            --spot-dark: #111111;
-        }
+        :root { --spot-bg: #1a1a1a; --spot-orange: #ff6600; --spot-dark: #111111; }
         body { background-color: var(--spot-bg); color: white; font-family: 'Inter', sans-serif; }
         .hero-title { line-height: 0.9; letter-spacing: -0.04em; font-weight: 900; }
         .glass-nav { background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); }
-        .section-white { background-color: var(--spot-light-bg); color: #333; }
-        .card-hover { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
-        .card-hover:hover { transform: translateY(-8px); border-color: var(--spot-orange); background: rgba(255, 102, 0, 0.05); }
         .hero-bg {
-            position: relative;
             background-image: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.9)), 
                               url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
             background-size: cover; background-position: center; background-attachment: fixed;
         }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 8)); } }
-        .slider { background: var(--spot-dark); height: 150px; margin: auto; overflow: hidden; position: relative; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .slide-track { animation: scroll 40s linear infinite; display: flex; width: calc(250px * 32); align-items: center; }
-        .slide { height: 100px; width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .client-label { color: #888; font-size: 10px; font-weight: 900; text-transform: uppercase; margin-top: 10px; letter-spacing: 1px; }
-
-        /* Modal do Painel de Atas */
-        #admin-panel { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
-        .admin-content { background: #222; padding: 30px; rounded: 20px; border: 1px solid var(--spot-orange); width: 100%; max-width: 500px; }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 3.5rem !important; }
-            .glass-nav .container { flex-direction: column; gap: 1rem; text-align: center; }
-            .hidden.lg\:flex { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 10px; }
-            .hidden.lg\:flex a { font-size: 8px !important; }
-        }
+        .slider { background: var(--spot-dark); height: 120px; overflow: hidden; position: relative; border-y: 1px solid rgba(255,255,255,0.05); }
+        .slide-track { animation: scroll 40s linear infinite; display: flex; width: calc(250px * 16); }
+        .slide { width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        #admin-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; overflow-y: auto; padding: 20px; }
+        .form-input { width: 100%; background: #000; border: 1px solid #333; padding: 10px; border-radius: 8px; color: #fff; margin-bottom: 15px; font-size: 13px; }
     </style>
 </head>
 <body>
 
     <nav class="glass-nav p-4 sticky top-0 z-50 border-b border-white/10">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3 hover:opacity-80 transition group">
-                <div class="w-10 h-8 bg-[#ff6600] rounded flex items-center justify-center font-black text-lg text-white shadow-lg">M&J</div>
-                <span class="text-lg font-black tracking-tighter uppercase text-white">COMÉRCIO <span class="text-[#ff6600] font-black">E SERVIÇOS</span></span>
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-8 bg-[#ff6600] rounded flex items-center justify-center font-black italic shadow-lg">M&J</div>
+                <span class="text-lg font-black uppercase">COMÉRCIO <span class="text-[#ff6600]">E SERVIÇOS</span></span>
             </a>
-            <div class="hidden lg:flex items-center space-x-6 font-black text-[9px] uppercase tracking-[0.2em] text-gray-400">
+            <div class="hidden lg:flex items-center space-x-6 font-black text-[9px] uppercase tracking-[0.2em]">
                 <a href="#sobre" class="hover:text-[#ff6600] transition">A Empresa</a>
                 <a href="#solucoes" class="hover:text-[#ff6600] transition">Serviços</a>
-                <a href="#cases" class="hover:text-[#ff6600] transition">Cases de Sucesso</a>
-                <a href="#atas-area" class="hover:text-[#ff6600] transition text-[#ff6600]">Atas de Pregão</a>
-                <a href="#portal" class="hover:text-[#ff6600] transition">Área do Cliente</a>
-                <a href="#licitante" class="hover:text-[#ff6600] transition">Área do Licitante</a>
-                <a href="#assessoria-detalhada" class="bg-[#ff6600] px-6 py-2 rounded-full text-white shadow-lg hover:bg-[#e65c00] transition">ASSESSORIA VIP</a>
+                <a href="#cases" class="hover:text-[#ff6600] transition">Cases</a>
+                <a href="#atas-section" class="hover:text-[#ff6600] transition text-[#ff6600]">Atas de Pregão</a>
+                <a href="#portal" class="hover:text-[#ff6600] transition">Cliente</a>
+                <a href="#assessoria-detalhada" class="bg-[#ff6600] px-6 py-2 rounded-full hover:bg-[#e65c00] transition">ASSESSORIA VIP</a>
+                <button onclick="openLogin()" class="border border-[#ff6600] text-[#ff6600] px-4 py-1 rounded-md hover:bg-[#ff6600] hover:text-white transition">LOGIN</button>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg py-32 md:py-56 px-6 text-center border-b border-white/10">
-        <div class="container mx-auto relative z-10 text-center">
-            <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8 drop-shadow-2xl">TECNOLOGIA <br><span class="text-[#ff6600] font-black">SEM FRONTEIRAS</span></h1>
-            <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 italic font-light drop-shadow">M&J COMÉRCIO E SERVIÇOS LTDA: Especialistas em Internet Satelital e Infraestrutura de TI.</p>
+    <header class="hero-bg py-32 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8">TECNOLOGIA <br><span class="text-[#ff6600]">SEM FRONTEIRAS</span></h1>
+            <p id="hero-desc" class="text-gray-300 max-w-2xl mx-auto font-medium">M&J COMÉRCIO E SERVIÇOS LTDA: Especialistas em Internet Satelital e Infraestrutura de TI para Missões Críticas.</p>
         </div>
     </header>
 
-    <section id="cases" class="py-12 bg-gray-950">
-        <div class="slider">
-            <div class="slide-track">
-                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - RR</span></div>
-                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - PA</span></div>
-                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - RO</span></div>
-                <div class="slide"><i class="fas fa-university text-3xl text-[#ff6600]"></i><span class="client-label">TRT 10</span></div>
-                <div class="slide"><i class="fas fa-gavel text-3xl text-[#ff6600]"></i><span class="client-label">MP TO</span></div>
-                <div class="slide"><i class="fas fa-helicopter text-3xl text-[#ff6600]"></i><span class="client-label">4º BAVEX</span></div>
-                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - RR</span></div>
-                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - PA</span></div>
-            </div>
+    <section id="cases" class="slider">
+        <div class="slide-track">
+            <div class="slide"><i class="fas fa-shield-alt text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">PRF - RR</span></div>
+            <div class="slide"><i class="fas fa-university text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">TRT 10</span></div>
+            <div class="slide"><i class="fas fa-shield-alt text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">PRF - PA</span></div>
+            <div class="slide"><i class="fas fa-gavel text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">MP TO</span></div>
+            <div class="slide"><i class="fas fa-helicopter text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">4º BAVEX</span></div>
+            <div class="slide"><i class="fas fa-satellite-dish text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">7ª CIA COM</span></div>
+            <div class="slide"><i class="fas fa-shield-alt text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">PRF - RR</span></div>
+            <div class="slide"><i class="fas fa-university text-2xl text-[#ff6600]"></i><span class="text-[10px] font-black mt-2">TRT 10</span></div>
         </div>
     </section>
 
-    <section id="atas-area" class="py-24 bg-gray-900 border-y border-white/5">
+    <section id="atas-section" class="py-24 bg-[#111111]">
         <div class="container mx-auto px-6">
             <h2 class="text-center text-4xl font-black uppercase mb-16 tracking-tighter text-white">Atas de Pregão</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-[#ff6600] font-black uppercase mb-8 border-l-4 border-[#ff6600] pl-4">Atas que Aceitam Carona</h3>
-                    <div id="container-carona-sim" class="space-y-4"></div>
+                    <h3 class="text-[#ff6600] font-black uppercase mb-8 border-l-4 border-[#ff6600] pl-4">Aceitam Carona</h3>
+                    <div id="grid-sim" class="space-y-4"></div>
                 </div>
                 <div>
-                    <h3 class="text-gray-500 font-black uppercase mb-8 border-l-4 border-gray-500 pl-4">Atas que Não Aceitam Carona</h3>
-                    <div id="container-carona-nao" class="space-y-4"></div>
+                    <h3 class="text-gray-500 font-black uppercase mb-8 border-l-4 border-gray-500 pl-4">Não Aceitam Carona</h3>
+                    <div id="grid-nao" class="space-y-4"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="section-white py-24 italic">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="text-justify font-black text-black">
-                <h2 class="text-4xl uppercase mb-8 border-l-[10px] border-[#ff6600] pl-6">A Empresa</h2>
-                <p>Referência em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 entregando inteligência tecnológica sob a gestão do CEO <strong>Jhon Cardoso</strong>.</p>
+    <section id="sobre" class="bg-white py-24 text-black">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="font-black">
+                <h2 class="text-4xl uppercase mb-8 border-l-8 border-[#ff6600] pl-6">A Empresa</h2>
+                <p id="sobre-texto">Atuando desde 2020 sob a gestão do CEO Jhon Cardoso, entregando suporte técnico de alto nível.</p>
             </div>
-            <div class="bg-gray-900 p-10 rounded-[3rem] text-white shadow-2xl font-black">
-                <h3 class="text-2xl mb-4 text-[#ff6600] uppercase">Missão</h3>
-                <p class="text-lg font-light leading-relaxed text-white">"Prover conectividade resiliente e inteligência tecnológica absoluta".</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="assessoria-detalhada" class="py-24 bg-slate-950 border-b border-slate-800">
-        <div class="container mx-auto px-6 text-center">
-            <h4 class="text-[#ff6600] font-black uppercase tracking-[0.3em] text-[10px] mb-4">Serviço de Elite</h4>
-            <h2 class="text-4xl md:text-6xl font-black uppercase mb-12">ASSESSORIA <span class="text-[#ff6600]">VIP</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left font-black uppercase">
-                <div class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5">
-                    <h3 class="text-[#ff6600] text-xl mb-6">O QUE É?</h3>
-                    <p class="text-gray-400 text-xs normal-case font-medium leading-relaxed">A Assessoria VIP da M&J é um serviço de acompanhamento estratégico ponta a ponta para empresas que buscam alta performance no mercado governamental sob a liderança de Jhon Cardoso.</p>
-                </div>
-                <div class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5 flex flex-col justify-center">
-                    <a href="https://wa.me/5591992203081" target="_blank" class="block w-full bg-[#ff6600] text-white py-6 rounded-2xl font-black uppercase text-xs hover:bg-[#e65c00] transition-all shadow-xl animate-pulse text-center">FALAR COM ANALISTA</a>
-                </div>
+            <div class="bg-gray-900 p-10 rounded-[2rem] text-white">
+                <h3 class="text-xl font-black text-[#ff6600] uppercase mb-4">Missão</h3>
+                <p id="missao-texto" class="font-light leading-relaxed">Prover conectividade resiliente e inteligência tecnológica absoluta.</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 px-6 bg-black text-white text-center relative">
-        <p class="text-gray-500 font-black uppercase text-[10px]">Jhon Cardoso - CEO</p>
-        <button onclick="document.getElementById('admin-panel').style.display='flex'" class="mt-4 text-gray-800 hover:text-[#ff6600] transition"><i class="fas fa-cog"></i></button>
-        <p class="pt-8 text-gray-800 text-[8px] tracking-[0.8em]">© 2026 M&J COMÉRCIO E SERVIÇOS LTDA</p>
+    <section id="assessoria-detalhada" class="py-24 bg-black border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-[#ff6600] font-black uppercase tracking-[0.3em] text-[10px] mb-4">Serviço de Elite</h4>
+                <h2 class="text-4xl md:text-6xl font-black uppercase mb-6">ASSESSORIA <span class="text-[#ff6600]">VIP</span></h2>
+                <div class="w-24 h-2 bg-[#ff6600] mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 font-black uppercase">
+                <div class="bg-gray-900 p-10 rounded-[2rem]">
+                    <h3 class="text-[#ff6600] text-xl mb-6">O QUE É E COMO FUNCIONA?</h3>
+                    <p class="text-gray-400 text-xs normal-case font-medium leading-relaxed">
+                        A Assessoria VIP da M&J é um serviço de acompanhamento estratégico ponta a ponta para empresas que buscam alta performance no mercado governamental sob a liderança de Jhon Cardoso.
+                    </p>
+                </div>
+                <div class="bg-gray-900 p-10 rounded-[2rem] text-center flex flex-col justify-center">
+                    <a href="https://wa.me/5591992203081" target="_blank" class="bg-[#ff6600] text-white py-6 rounded-2xl font-black uppercase animate-pulse">FALAR COM ANALISTA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-[#000] text-center">
+        <p class="text-[10px] font-black uppercase text-gray-600">Jhon Cardoso - CEO</p>
+        <p class="text-[8px] tracking-[1em] text-gray-800 mt-4 uppercase">© 2026 M&J COMÉRCIO E SERVIÇOS LTDA</p>
     </footer>
 
-    <div id="admin-panel">
-        <div class="admin-content">
-            <h3 class="text-[#ff6600] font-black uppercase mb-6 text-center">Gerenciar Atas</h3>
-            <input type="text" id="ata-orgao" placeholder="Nome do Órgão" class="w-full bg-black border border-white/10 p-3 rounded mb-4 text-sm">
-            <input type="text" id="ata-vigencia" placeholder="Vigência (Ex: 10/10/2026)" class="w-full bg-black border border-white/10 p-3 rounded mb-4 text-sm">
-            <input type="text" id="ata-link" placeholder="Link do PDF (Google Drive/Dropbox)" class="w-full bg-black border border-white/10 p-3 rounded mb-4 text-sm">
-            <div class="flex items-center mb-6">
-                <input type="checkbox" id="ata-carona" class="mr-2"> <label class="text-xs uppercase font-black">Aceita Carona?</label>
+    <div id="admin-modal">
+        <div class="admin-content mx-auto bg-[#1a1a1a] p-8 rounded-3xl border border-[#ff6600] max-w-2xl">
+            <div id="login-form">
+                <h2 class="text-[#ff6600] font-black text-center mb-8 uppercase tracking-widest">Acesso Restrito</h2>
+                <input type="email" id="user-email" placeholder="E-mail" class="form-input">
+                <input type="password" id="user-pass" placeholder="Senha" class="form-input">
+                <button onclick="handleLogin()" class="w-full bg-[#ff6600] py-3 rounded-lg font-black uppercase">Entrar</button>
             </div>
-            <button onclick="adicionarAta()" class="w-full bg-[#ff6600] text-white py-3 rounded font-black uppercase text-xs">Adicionar Ata na Lista</button>
-            <button onclick="document.getElementById('admin-panel').style.display='none'" class="w-full mt-4 text-gray-500 text-[10px] uppercase font-bold">Fechar Painel</button>
+
+            <div id="editor-area" style="display:none">
+                <h2 class="text-white font-black mb-6 uppercase border-b border-[#ff6600] pb-2">Painel de Atualização</h2>
+                
+                <div class="mb-8">
+                    <label class="text-[10px] font-black text-[#ff6600] uppercase">Texto da Capa (Hero)</label>
+                    <textarea id="edit-hero" class="form-input h-20"></textarea>
+                    
+                    <label class="text-[10px] font-black text-[#ff6600] uppercase">Texto A Empresa</label>
+                    <textarea id="edit-sobre" class="form-input h-20"></textarea>
+                    
+                    <button onclick="saveGeneral()" class="bg-green-600 px-6 py-2 rounded-md font-black uppercase text-[10px]">Salvar Textos</button>
+                </div>
+
+                <div class="border-t border-white/10 pt-6">
+                    <h3 class="text-white font-black text-sm uppercase mb-4">Adicionar Nova Ata (PDF)</h3>
+                    <input type="text" id="ata-org" placeholder="Nome do Órgão" class="form-input">
+                    <input type="text" id="ata-vig" placeholder="Vigência (dd/mm/aaaa)" class="form-input">
+                    <input type="text" id="ata-link" placeholder="Cole o link do PDF aqui" class="form-input">
+                    <div class="flex items-center gap-2 mb-4">
+                        <input type="checkbox" id="ata-carona"> <span class="text-[10px] uppercase font-black">Aceita Carona?</span>
+                    </div>
+                    <button onclick="addAta()" class="bg-[#ff6600] w-full py-3 rounded-lg font-black uppercase text-[12px]">Publicar Ata no Site</button>
+                </div>
+
+                <button onclick="location.reload()" class="w-full mt-10 text-gray-500 font-black uppercase text-[9px]">Sair do Painel</button>
+            </div>
         </div>
     </div>
 
-    <a href="https://wa.me/5591992203081" target="_blank" class="fixed bottom-8 right-8 bg-[#ff6600] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center animate-bounce z-[100]"><i class="fab fa-whatsapp text-3xl"></i></a>
-
     <script>
-        // Sistema de Armazenamento Local para persistir os dados no navegador
-        let atasCadastradas = JSON.parse(localStorage.getItem('atasMJ')) || [
-            { orgao: "EXEMPLO: PRF REGIONAL", vigencia: "01/01/2027", carona: true, link: "#" }
-        ];
+        // CONFIGURAÇÕES MESTRE (CITED: USER REQUEST)
+        const MASTER_USER = "comercio@mjlicitar.com.br";
+        const MASTER_PASS = "Licitacao22@";
 
-        function renderizarAtas() {
-            const sim = document.getElementById('container-carona-sim');
-            const nao = document.getElementById('container-carona-nao');
-            sim.innerHTML = ''; nao.innerHTML = '';
+        let db = JSON.parse(localStorage.getItem('MJ_DATABASE')) || {
+            hero: "M&J COMÉRCIO E SERVIÇOS LTDA: Especialistas em Internet Satelital e Infraestrutura de TI para Missões Críticas.",
+            sobre: "Referência em Belém/PA, a M&J COMÉRCIO E SERVIÇOS LTDA atua desde 2020 entregando inteligência tecnológica sob a gestão do CEO Jhon Cardoso.",
+            atas: []
+        };
 
-            atasCadastradas.forEach((ata, index) => {
-                const card = `
-                    <div class="bg-black/40 p-5 rounded-xl border border-white/5 hover:border-[#ff6600] transition group">
-                        <div class="flex justify-between items-center">
-                            <a href="${ata.link}" target="_blank" class="flex-grow">
-                                <h4 class="text-white font-black text-xs uppercase mb-1">${ata.orgao}</h4>
-                                <span class="text-[9px] text-gray-500 font-bold">Vigência: ${ata.vigencia}</span>
-                            </a>
-                            <button onclick="removerAta(${index})" class="ml-4 text-red-900 hover:text-red-500 text-[10px] uppercase font-black">Excluir</button>
-                        </div>
-                    </div>`;
-                if(ata.carona) sim.innerHTML += card; else nao.innerHTML += card;
+        function initSite() {
+            document.getElementById('hero-desc').innerText = db.hero;
+            document.getElementById('sobre-texto').innerText = db.sobre;
+            
+            const gridSim = document.getElementById('grid-sim');
+            const gridNao = document.getElementById('grid-nao');
+            gridSim.innerHTML = ''; gridNao.innerHTML = '';
+
+            db.atas.forEach((ata, idx) => {
+                const card = `<div class="bg-black/40 p-5 rounded-xl border border-white/5 flex justify-between items-center group hover:border-[#ff6600] transition">
+                    <div><h4 class="text-white font-black text-xs uppercase">${ata.org}</h4><span class="text-[9px] text-gray-500 uppercase font-bold">Vigência: ${ata.vig}</span></div>
+                    <a href="${ata.url}" target="_blank" class="text-[#ff6600] hover:scale-110 transition"><i class="fas fa-file-pdf text-xl"></i></a>
+                </div>`;
+                if(ata.carona) gridSim.innerHTML += card; else gridNao.innerHTML += card;
             });
-            localStorage.setItem('atasMJ', JSON.stringify(atasCadastradas));
         }
 
-        function adicionarAta() {
-            const orgao = document.getElementById('ata-orgao').value;
-            const vigencia = document.getElementById('ata-vigencia').value;
-            const link = document.getElementById('ata-link').value;
+        function openLogin() { document.getElementById('admin-modal').style.display = 'flex'; }
+        
+        function handleLogin() {
+            if(document.getElementById('user-email').value === MASTER_USER && document.getElementById('user-pass').value === MASTER_PASS) {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('editor-area').style.display = 'block';
+                document.getElementById('edit-hero').value = db.hero;
+                document.getElementById('edit-sobre').value = db.sobre;
+            } else { alert("Acesso negado."); }
+        }
+
+        function saveGeneral() {
+            db.hero = document.getElementById('edit-hero').value;
+            db.sobre = document.getElementById('edit-sobre').value;
+            localStorage.setItem('MJ_DATABASE', JSON.stringify(db));
+            alert("Informações atualizadas!");
+            initSite();
+        }
+
+        function addAta() {
+            const org = document.getElementById('ata-org').value;
+            const vig = document.getElementById('ata-vig').value;
+            const url = document.getElementById('ata-link').value;
             const carona = document.getElementById('ata-carona').checked;
 
-            if(orgao && vigencia && link) {
-                atasCadastradas.push({ orgao, vigencia, link, carona });
-                renderizarAtas();
-                document.getElementById('admin-panel').style.display = 'none';
-            } else { alert("Preencha todos os campos!"); }
-        }
-
-        function removerAta(index) {
-            if(confirm("Deseja excluir esta ata?")) {
-                atasCadastradas.splice(index, 1);
-                renderizarAtas();
+            if(org && vig && url) {
+                db.atas.push({ org, vig, url, carona });
+                localStorage.setItem('MJ_DATABASE', JSON.stringify(db));
+                alert("Ata adicionada com sucesso!");
+                initSite();
+                document.getElementById('ata-org').value = '';
+                document.getElementById('ata-vig').value = '';
+                document.getElementById('ata-link').value = '';
             }
         }
 
-        document.addEventListener('DOMContentLoaded', renderizarAtas);
+        document.addEventListener('DOMContentLoaded', initSite);
     </script>
 </body>
 </html>
