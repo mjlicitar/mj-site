@@ -16,90 +16,150 @@
         body { background-color: var(--spot-bg); color: white; font-family: 'Inter', sans-serif; }
         .hero-title { line-height: 0.9; letter-spacing: -0.04em; font-weight: 900; }
         .glass-nav { background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); }
+        .section-white { background-color: var(--spot-light-bg); color: #333; }
+        .card-hover { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .card-hover:hover { transform: translateY(-8px); border-color: var(--spot-orange); background: rgba(255, 102, 0, 0.05); }
         .hero-bg {
             position: relative;
             background-image: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.9)), 
                               url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
             background-size: cover; background-position: center; background-attachment: fixed;
         }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 8)); } }
+
+        /* ESTILO DO CARROSSEL INFINITO */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 8)); }
+        }
         .slider { background: var(--spot-dark); height: 150px; margin: auto; overflow: hidden; position: relative; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .slider::before, .slider::after { background: linear-gradient(to right, rgba(17,17,17,1) 0%, rgba(17,17,17,0) 100%); content: ""; height: 150px; position: absolute; width: 200px; z-index: 2; }
+        .slider::after { right: 0; top: 0; transform: rotateZ(180deg); }
+        .slider::before { left: 0; top: 0; }
         .slide-track { animation: scroll 40s linear infinite; display: flex; width: calc(250px * 32); align-items: center; }
         .slide { height: 100px; width: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .client-label { color: #888; font-size: 10px; font-weight: 900; text-transform: uppercase; margin-top: 10px; letter-spacing: 1px; }
 
-        /* PAINEL ADMIN */
-        #admin-panel { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 10000; overflow-y: auto; padding: 20px; }
-        .admin-card { max-width: 900px; margin: 40px auto; background: #111; border: 2px solid var(--spot-orange); padding: 40px; border-radius: 24px; }
-        .form-input { width: 100%; background: #000; border: 1px solid #333; padding: 12px; border-radius: 8px; color: #fff; margin-bottom: 15px; font-size: 14px; }
-        .admin-label { display: block; font-size: 11px; font-weight: 900; color: var(--spot-orange); text-transform: uppercase; margin-bottom: 5px; }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3.5rem !important; }
+            .glass-nav .container { flex-direction: column; gap: 1rem; text-align: center; }
+            .hidden.lg\:flex { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .hidden.lg\:flex a { font-size: 8px !important; }
+        }
     </style>
 </head>
 <body>
 
     <nav class="glass-nav p-4 sticky top-0 z-50 border-b border-white/10">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3">
+            <a href="#" class="flex items-center gap-3 hover:opacity-80 transition group">
                 <div class="w-10 h-8 bg-[#ff6600] rounded flex items-center justify-center font-black text-lg text-white shadow-lg">M&J</div>
-                <span class="text-lg font-black tracking-tighter uppercase text-white">COMÉRCIO <span class="text-[#ff6600] font-black">E SERVIÇOS</span></span>
+                <span class="text-lg font-black tracking-tighter uppercase text-white">
+                    COMÉRCIO <span class="text-[#ff6600] font-black">E SERVIÇOS</span>
+                </span>
             </a>
+            
             <div class="hidden lg:flex items-center space-x-6 font-black text-[9px] uppercase tracking-[0.2em] text-gray-400">
-                <a href="#sobre" class="hover:text-[#ff6600]">A Empresa</a>
-                <a href="#solucoes" class="hover:text-[#ff6600]">Serviços</a>
-                <a href="#cases" class="hover:text-[#ff6600]">Cases</a>
-                <a href="#atas-area" class="hover:text-[#ff6600] text-[#ff6600]">Atas de Pregão</a>
-                <a href="#portal" class="hover:text-[#ff6600]">Área do Cliente</a>
-                <a href="#licitante" class="hover:text-[#ff6600]">Área do Licitante</a>
-                <a href="#assessoria-detalhada" class="bg-[#ff6600] px-6 py-2 rounded-full text-white">ASSESSORIA VIP</a>
-                <button onclick="openLogin()" class="border border-[#ff6600] text-[#ff6600] px-4 py-1 rounded hover:bg-[#ff6600] hover:text-white transition">LOGIN</button>
+                <a href="#sobre" class="hover:text-[#ff6600] transition">A Empresa</a>
+                <a href="#solucoes" class="hover:text-[#ff6600] transition">Serviços</a>
+                <a href="#cases" class="hover:text-[#ff6600] transition">Cases de Sucesso</a>
+                <a href="#portal" class="hover:text-[#ff6600] transition underline underline-offset-8 font-black">Área do Cliente</a>
+                <a href="#licitante" class="hover:text-[#ff6600] transition font-black text-white">Área do Licitante</a>
+                <a href="#assessoria-detalhada" class="bg-[#ff6600] px-6 py-2 rounded-full text-white shadow-lg hover:bg-[#e65c00] transition">ASSESSORIA VIP</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-bg py-32 md:py-56 px-6 text-center border-b border-white/10">
         <div class="container mx-auto relative z-10 text-center">
-            <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8 drop-shadow-2xl">TECNOLOGIA <br><span class="text-[#ff6600] font-black">SEM FRONTEIRAS</span></h1>
-            <p id="site-hero-desc" class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 drop-shadow">M&J COMÉRCIO E SERVIÇOS LTDA: Especialistas em Internet Satelital, Monitoramento Global e Gestão de Ativos Tecnológicos.</p>
+            <h1 class="hero-title text-5xl md:text-8xl uppercase mb-8 drop-shadow-2xl">
+                TECNOLOGIA <br><span class="text-[#ff6600] font-black">SEM FRONTEIRAS</span>
+            </h1>
+            <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 font-light drop-shadow">
+                M&J COMÉRCIO E SERVIÇOS LTDA: Especialistas em Internet Satelital, Monitoramento Global e Gestão de Ativos Tecnológicos.
+            </p>
         </div>
     </header>
 
-    <section id="cases" class="py-12 bg-gray-950">
+    <section id="cases" class="py-24 bg-gray-950">
+        <div class="container mx-auto px-6 mb-12">
+            <h2 class="text-center text-4xl font-black uppercase mb-4 tracking-tighter text-white">Cases de Sucesso</h2>
+            <p class="text-center text-gray-500 font-medium uppercase text-xs tracking-widest">Confiança consolidada em órgãos de segurança e defesa nacional</p>
+        </div>
+        
         <div class="slider">
             <div class="slide-track">
                 <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - RR</span></div>
-                <div class="slide"><i class="fas fa-university text-3xl text-[#ff6600]"></i><span class="client-label">TRT 10</span></div>
-                <div class="slide"><i class="fas fa-gavel text-3xl text-[#ff6600]"></i><span class="client-label">MP TO</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - PA</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - RO</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">23 BDA INF SL</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">22 BDA INF SL</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">51 BIS</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">CIGS</span></div>
+                <div class="slide"><i class="fas fa-helicopter text-3xl text-[#ff6600]"></i><span class="client-label">4º BAVEX</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">CIOPESP</span></div>
+                <div class="slide"><i class="fas fa-university text-3xl text-[#ff6600]"></i><span class="client-label">B ADM CURADO</span></div>
+                <div class="slide"><i class="fas fa-gavel text-3xl text-[#ff6600]"></i><span class="client-label">TRT 10</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">B ADM CMDO OP ESP</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">6º BIM</span></div>
+                <div class="slide"><i class="fas fa-satellite-dish text-3xl text-[#ff6600]"></i><span class="client-label">7ª CIA COM</span></div>
+                <div class="slide"><i class="fas fa-truck-moving text-3xl text-[#ff6600]"></i><span class="client-label">23º B LOG</span></div>
+                <div class="slide"><i class="fas fa-balance-scale text-3xl text-[#ff6600]"></i><span class="client-label">MP TO</span></div>
+                
                 <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - RR</span></div>
-                <div class="slide"><i class="fas fa-university text-3xl text-[#ff6600]"></i><span class="client-label">TRT 10</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="atas-area" class="py-24 bg-gray-900 border-y border-white/5">
-        <div class="container mx-auto px-6">
-            <h2 class="text-center text-4xl font-black uppercase mb-16 tracking-tighter text-white">Atas de Pregão</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-[#ff6600] font-black uppercase mb-8 border-l-4 border-[#ff6600] pl-4">Aceitam Carona</h3>
-                    <div id="container-sim" class="space-y-4"></div>
-                </div>
-                <div>
-                    <h3 class="text-gray-500 font-black uppercase mb-8 border-l-4 border-gray-500 pl-4">Não Aceitam Carona</h3>
-                    <div id="container-nao" class="space-y-4"></div>
-                </div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - PA</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">PRF - RO</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">23 BDA INF SL</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">22 BDA INF SL</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">51 BIS</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">CIGS</span></div>
+                <div class="slide"><i class="fas fa-helicopter text-3xl text-[#ff6600]"></i><span class="client-label">4º BAVEX</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">CIOPESP</span></div>
+                <div class="slide"><i class="fas fa-university text-3xl text-[#ff6600]"></i><span class="client-label">B ADM CURADO</span></div>
+                <div class="slide"><i class="fas fa-gavel text-3xl text-[#ff6600]"></i><span class="client-label">TRT 10</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">B ADM CMDO OP ESP</span></div>
+                <div class="slide"><i class="fas fa-shield-alt text-3xl text-[#ff6600]"></i><span class="client-label">6º BIM</span></div>
+                <div class="slide"><i class="fas fa-satellite-dish text-3xl text-[#ff6600]"></i><span class="client-label">7ª CIA COM</span></div>
+                <div class="slide"><i class="fas fa-truck-moving text-3xl text-[#ff6600]"></i><span class="client-label">23º B LOG</span></div>
+                <div class="slide"><i class="fas fa-balance-scale text-3xl text-[#ff6600]"></i><span class="client-label">MP TO</span></div>
             </div>
         </div>
     </section>
 
     <section id="sobre" class="section-white py-24">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="text-justify font-black text-black">
-                <h2 class="text-4xl uppercase mb-8 border-l-[10px] border-[#ff6600] pl-6">A Empresa</h2>
-                <p id="site-sobre-texto">Referência em Belém/PA, a M&J COMÉRCIO E SERVIÇOS LTDA atua desde 2020 entregando inteligência tecnológica sob a gestão do CEO Jhon Cardoso.</p>
+            <div class="text-justify font-black">
+                <h2 class="text-4xl uppercase mb-8 border-l-[10px] border-[#ff6600] pl-6 text-gray-900">A Empresa</h2>
+                <div class="space-y-6 text-base text-gray-600 font-medium">
+                    <p>Referência em Belém/PA, a <strong>M&J COMÉRCIO E SERVIÇOS LTDA</strong> atua desde 2020 entregando inteligência tecnológica sob a gestão do CEO <strong>Jhon Cardoso</strong>.</p>
+                    <p>Especialistas em implementar redes resilientes e suporte técnico de alto nível para instituições de rigor máximo.</p>
+                </div>
             </div>
             <div class="bg-gray-900 p-10 rounded-[3rem] text-white shadow-2xl font-black">
                 <h3 class="text-2xl mb-4 text-[#ff6600] uppercase">Missão</h3>
-                <p id="site-missao-texto" class="text-lg font-light leading-relaxed">Prover conectividade resiliente e inteligência tecnológica absoluta.</p>
+                <p class="text-lg font-light leading-relaxed">"Prover conectividade resiliente e inteligência tecnológica absoluta".</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="py-24 bg-gray-900 text-white font-black uppercase">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-4xl mb-16 tracking-tighter">Nossas Soluções</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-black/40 p-10 rounded-[2.5rem] border border-white/5 card-hover">
+                    <i class="fas fa-satellite text-4xl text-[#ff6600] mb-6"></i>
+                    <h4 class="text-xl font-black mb-4">TI & Satélite</h4>
+                    <p class="text-gray-400 text-sm normal-case font-medium leading-relaxed">Conectividade Starlink para áreas remotas e gestão governamental crítica.</p>
+                </div>
+                <div class="bg-black/40 p-10 rounded-[2.5rem] border border-white/5 card-hover">
+                    <i class="fas fa-map-marker-alt text-4xl text-[#ff6600] mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 text-white">Rastreamento</h4>
+                    <p class="text-gray-400 text-sm normal-case font-medium leading-relaxed text-white">Rastreamento GPRS/GPS, gestão de frotas e monitoramento pessoal.</p>
+                </div>
+                <div class="bg-[#ff6600] p-10 rounded-[2.5rem] shadow-2xl transform hover:scale-105 transition duration-500 text-white">
+                    <i class="fas fa-print text-4xl text-white mb-6"></i>
+                    <h4 class="text-xl font-black mb-4">Outsourcing</h4>
+                    <p class="text-white/80 text-sm normal-case font-medium leading-relaxed">Locação e gestão de parques de impressão com manutenção proativa.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -115,142 +175,109 @@
                 <div class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5">
                     <h3 class="text-[#ff6600] text-xl mb-6"><i class="fas fa-question-circle mr-3"></i> O QUE É E COMO FUNCIONA?</h3>
                     <p class="text-gray-400 text-xs normal-case font-medium mb-6 leading-relaxed">
-                        A Assessoria VIP da M&J é um serviço de acompanhamento estratégico ponta a ponta para empresas que buscam alta performance no mercado governamental sob a liderança de Jhon Cardoso.
+                        A Assessoria VIP da M&J é um serviço de acompanhamento estratégico ponta a ponta para empresas que buscam alta performance no mercado governamental. Não somos apenas consultores; atuamos como o departamento de licitações da sua empresa, utilizando inteligência de dados e suporte jurídico especializado.
                     </p>
                     <h3 class="text-[#ff6600] text-xl mb-6"><i class="fas fa-cogs mr-3"></i> O QUE É FEITO?</h3>
                     <ul class="text-gray-400 text-[10px] space-y-3 normal-case font-medium">
-                        <li><i class="fas fa-check text-[#ff6600] mr-2"></i> Monitoramento diário de editais.</li>
-                        <li><i class="fas fa-check text-[#ff6600] mr-2"></i> Análise técnica e jurídica de riscos.</li>
+                        <li><i class="fas fa-check text-[#ff6600] mr-2"></i> Monitoramento diário de editais com base no perfil da empresa.</li>
+                        <li><i class="fas fa-check text-[#ff6600] mr-2"></i> Análise técnica e jurídica de riscos e viabilidade.</li>
                         <li><i class="fas fa-check text-[#ff6600] mr-2"></i> Montagem completa da documentação e propostas.</li>
+                        <li><i class="fas fa-check text-[#ff6600] mr-2"></i> Representação em sessões públicas e interposição de recursos.</li>
                     </ul>
                 </div>
-                <div class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5 flex flex-col justify-center">
-                    <a href="https://wa.me/5591992203081" target="_blank" class="block w-full bg-[#ff6600] text-white py-6 rounded-2xl font-black uppercase text-xs hover:bg-[#e65c00] transition-all shadow-xl animate-pulse text-center">FALAR COM ANALISTA</a>
+                <div class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-[#ff6600] text-xl mb-6"><i class="fas fa-chart-line mr-3"></i> RESULTADO ESPERADO</h3>
+                        <p class="text-gray-400 text-xs normal-case font-medium mb-8 leading-relaxed">
+                            O foco central é o aumento da taxa de conversão em certames e a segurança jurídica operacional. Nossos clientes experimentam um crescimento escalável de faturamento recorrente através de contratos sólidos com a administração pública.
+                        </p>
+                    </div>
+                    <div class="text-center pt-8 border-t border-white/5">
+                        <a href="https://wa.me/5591992203081" target="_blank" class="block w-full bg-[#ff6600] text-white py-6 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-[#e65c00] transition-all shadow-xl animate-pulse">
+                            <i class="fab fa-whatsapp mr-2 text-lg"></i> FALAR COM ANALISTA
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="admin-panel">
-        <div class="admin-card">
-            <div id="login-form">
-                <h2 class="text-[#ff6600] font-black text-center mb-8 uppercase tracking-widest text-2xl">Master Control</h2>
-                <input type="email" id="adm-email" placeholder="E-mail" class="form-input">
-                <input type="password" id="adm-pass" placeholder="Senha" class="form-input">
-                <button onclick="authMaster()" class="w-full bg-[#ff6600] py-4 rounded-lg font-black uppercase">Acessar Painel</button>
+    <section id="licitante" class="py-24 bg-gray-900 border-b border-white/5">
+        <div class="container mx-auto px-6 font-black uppercase">
+            <h2 class="text-center text-4xl mb-16 tracking-tighter text-white">Área do Licitante</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
+                <a href="https://licitei.com.br/login" target="_blank" class="bg-black/50 p-10 rounded-[2.5rem] border border-white/5 hover:border-[#ff6600] transition-all group">
+                    <i class="fas fa-gavel text-3xl text-[#ff6600] mb-6"></i>
+                    <h4 class="text-white text-xs mb-8">Login Licitei</h4>
+                    <div class="w-full bg-[#ff6600] text-white py-4 rounded-xl text-[10px]">Acessar</div>
+                </a>
+                <a href="https://www.comprasnet.gov.br/seguro/loginPortalFornecedor.asp" target="_blank" class="bg-black/50 p-10 rounded-[2.5rem] border border-white/5 hover:border-[#ff6600] transition-all group">
+                    <i class="fas fa-university text-3xl text-[#ff6600] mb-6"></i>
+                    <h4 class="text-white text-xs mb-8">Comprasnet</h4>
+                    <div class="w-full bg-[#ff6600] text-white py-4 rounded-xl text-[10px]">Acessar</div>
+                </a>
+                <a href="https://pncp.gov.br/app/editais?pagina=1" target="_blank" class="bg-black/50 p-10 rounded-[2.5rem] border border-white/5 hover:border-[#ff6600] transition-all group">
+                    <i class="fas fa-file-contract text-3xl text-[#ff6600] mb-6"></i>
+                    <h4 class="text-white text-xs mb-8">Consulta PNCP</h4>
+                    <div class="w-full bg-[#ff6600] text-white py-4 rounded-xl text-[10px]">Acessar</div>
+                </a>
             </div>
+        </div>
+    </section>
 
-            <div id="editor-form" style="display:none">
-                <h2 class="text-white font-black mb-10 uppercase border-b-2 border-[#ff6600] pb-4">Gerenciador de Conteúdo</h2>
-                
-                <div class="grid md:grid-cols-2 gap-10">
-                    <div>
-                        <label class="admin-label">Descrição da Capa (Hero)</label>
-                        <textarea id="edit-hero" class="form-input h-32"></textarea>
-                        
-                        <label class="admin-label">Texto Seção A Empresa</label>
-                        <textarea id="edit-sobre" class="form-input h-32"></textarea>
-                    </div>
-                    <div>
-                        <label class="admin-label">Adicionar Ata (Upload PDF)</label>
-                        <input type="text" id="ata-org" placeholder="Órgão" class="form-input">
-                        <input type="text" id="ata-vig" placeholder="Vigência" class="form-input">
-                        <input type="file" id="ata-file" accept="application/pdf" class="form-input border-dashed">
-                        <div class="flex items-center gap-2 mb-6">
-                            <input type="checkbox" id="ata-carona"> <span class="text-[10px] font-black uppercase">Aceita Carona?</span>
-                        </div>
-                        <button onclick="handleAtaUpload()" class="bg-green-600 w-full py-3 rounded-lg font-black uppercase text-xs mb-4">Salvar Ata no Site</button>
-                    </div>
+    <section id="portal" class="py-24 bg-gray-950 border-b border-white/5 text-center font-black uppercase">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl mb-16 tracking-tighter text-white">Área do Cliente</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden">
+                    <i class="fas fa-truck-monster text-3xl text-gray-600 mb-6"></i>
+                    <h4 class="text-gray-500 text-xs mb-8">Rastreamento</h4>
+                    <button disabled class="w-full bg-gray-800 text-gray-500 py-4 rounded-xl text-[10px]">Em Manutenção</button>
                 </div>
+                <a href="https://myaccount.findmespot.com/login" target="_blank" class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5 hover:border-[#ff6600] transition">
+                    <i class="fas fa-map-marker-alt text-3xl text-[#ff6600] mb-6"></i>
+                    <h4 class="text-white text-xs mb-8">SPOT Login</h4>
+                    <div class="w-full bg-[#ff6600] text-white py-4 rounded-xl text-[10px]">Login</div>
+                </a>
+                <a href="https://starlink.com/auth/login" target="_blank" class="bg-gray-900 p-10 rounded-[2.5rem] border border-white/5 hover:border-[#ff6600] transition text-white">
+                    <i class="fas fa-satellite text-3xl text-[#ff6600] mb-6"></i>
+                    <h4 class="text-white text-xs mb-8">Painel Starlink</h4>
+                    <div class="w-full bg-[#ff6600] text-white py-4 rounded-xl text-[10px]">Acessar</div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="mt-10 flex gap-4">
-                    <button onclick="saveChanges()" class="flex-grow bg-[#ff6600] py-4 rounded-lg font-black uppercase shadow-lg">Publicar Alterações</button>
-                    <button onclick="location.reload()" class="bg-gray-800 px-8 rounded-lg font-black uppercase text-[10px]">Sair</button>
+    <footer class="py-20 px-6 bg-black text-white uppercase font-black border-t border-white/10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-16 text-center md:text-left">
+            <div>
+                <h3 class="text-2xl mb-6 text-[#ff6600] tracking-tighter">M&J <span class="text-white font-black">COMÉRCIO</span></h3>
+                <p class="text-gray-500 text-[10px] mb-4 tracking-[0.3em]">CNPJ: 39.469.099/0001-00</p>
+            </div>
+            <div>
+                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-[#ff6600]">Canais Oficiais</h4>
+                <div class="space-y-4 text-xs tracking-widest normal-case text-white">
+                    <p><i class="fas fa-phone-alt text-[#ff6600] mr-2"></i> (91) 99220-3081</p>
+                    <p><i class="fas fa-envelope text-[#ff6600] mr-2"></i> comercial@mjlicitar.com.br</p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-[9px] tracking-[0.4em] mb-10 text-[#ff6600] text-center md:text-right">Sede Estratégica</h4>
+                <div class="text-center md:text-right">
+                    <p class="text-slate-200 text-xs mb-2">Av. Senador Lemos, 791 - Umarizal</p>
+                    <p class="text-gray-500 font-mono text-[10px]">Belém-PA</p>
+                    <p class="mt-10 text-gray-400 border-t border-white/5 pt-6 text-[10px] text-white">Jhon Cardoso - CEO</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <footer class="py-12 bg-black text-center font-black uppercase border-t border-white/10">
-        <p class="text-gray-500 text-[10px]">Jhon Cardoso - CEO | © 2026 M&J COMÉRCIO E SERVIÇOS LTDA</p>
+        <div class="container mx-auto pt-10 text-center text-gray-800 text-[8px] tracking-[0.8em]">
+            © 2026 M&J COMÉRCIO E SERVIÇOS LTDA. Todos os direitos reservados.
+        </div>
     </footer>
 
-    <script>
-        const AUTH = { user: "comercio@mjlicitar.com.br", pass: "Licitacao22@" };
+    <a href="https://wa.me/5591992203081" target="_blank" class="fixed bottom-8 right-8 bg-[#ff6600] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-[100] animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
 
-        let siteData = JSON.parse(localStorage.getItem('MJ_SITE_DB')) || {
-            hero: "M&J COMÉRCIO E SERVIÇOS LTDA: Especialistas em Internet Satelital, Monitoramento Global e Gestão de Ativos Tecnológicos.",
-            sobre: "Referência em Belém/PA, a M&J COMÉRCIO E SERVIÇOS LTDA atua desde 2020 entregando inteligência tecnológica sob a gestão do CEO Jhon Cardoso.",
-            missao: "Prover conectividade resiliente e inteligência tecnológica absoluta.",
-            atas: []
-        };
-
-        function updateUI() {
-            document.getElementById('site-hero-desc').innerText = siteData.hero;
-            document.getElementById('site-sobre-texto').innerText = siteData.sobre;
-            document.getElementById('site-missao-texto').innerText = siteData.missao;
-
-            const sim = document.getElementById('container-sim');
-            const nao = document.getElementById('container-nao');
-            sim.innerHTML = ''; nao.innerHTML = '';
-
-            siteData.atas.forEach((ata, i) => {
-                const card = `<div class="bg-black/40 p-5 rounded-xl border border-white/5 flex justify-between items-center group hover:border-[#ff6600] transition">
-                    <div><h4 class="text-white font-black text-xs uppercase mb-1">${ata.org}</h4><span class="text-[9px] text-gray-500 font-bold">Vigência: ${ata.vig}</span></div>
-                    <div class="flex gap-3">
-                        <button onclick="viewPdf(${i})" class="text-[#ff6600]"><i class="fas fa-file-pdf text-xl"></i></button>
-                        <button onclick="deleteAta(${i})" class="text-red-900 text-[8px] font-black">REMOVER</button>
-                    </div>
-                </div>`;
-                if(ata.carona) sim.innerHTML += card; else nao.innerHTML += card;
-            });
-        }
-
-        function openLogin() { document.getElementById('admin-panel').style.display = 'flex'; }
-        
-        function authMaster() {
-            if(document.getElementById('adm-email').value === AUTH.user && document.getElementById('adm-pass').value === AUTH.pass) {
-                document.getElementById('login-form').style.display = 'none';
-                document.getElementById('editor-form').style.display = 'block';
-                document.getElementById('edit-hero').value = siteData.hero;
-                document.getElementById('edit-sobre').value = siteData.sobre;
-            } else { alert("Acesso Negado"); }
-        }
-
-        function handleAtaUpload() {
-            const file = document.getElementById('ata-file').files[0];
-            const org = document.getElementById('ata-org').value;
-            const vig = document.getElementById('ata-vig').value;
-            const carona = document.getElementById('ata-carona').checked;
-
-            if(!file || !org) return alert("Selecione o PDF e preencha o Órgão.");
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                siteData.atas.push({ org, vig, carona, fileData: e.target.result });
-                localStorage.setItem('MJ_SITE_DB', JSON.stringify(siteData));
-                alert("Ata carregada com sucesso!");
-                updateUI();
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function viewPdf(i) {
-            const newTab = window.open();
-            newTab.document.write(`<iframe src="${siteData.atas[i].fileData}" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>`);
-        }
-
-        function deleteAta(i) { if(confirm("Remover ata?")) { siteData.atas.splice(i,1); localStorage.setItem('MJ_SITE_DB', JSON.stringify(siteData)); updateUI(); } }
-
-        function saveChanges() {
-            siteData.hero = document.getElementById('edit-hero').value;
-            siteData.sobre = document.getElementById('edit-sobre').value;
-            localStorage.setItem('MJ_SITE_DB', JSON.stringify(siteData));
-            alert("Site atualizado com sucesso!");
-            updateUI();
-        }
-
-        document.addEventListener('DOMContentLoaded', updateUI);
-    </script>
 </body>
 </html>
